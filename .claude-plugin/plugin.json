@@ -1,69 +1,99 @@
 {
   "name": "custom-plugin-android",
   "version": "1.0.0",
-  "description": "Professional Android development guide with 4 core agents, skills, and best practices",
+  "description": "Professional Android development plugin with 7 core agents and comprehensive skills based on developer-roadmap Android pathway",
   "author": "Plugin Agent Marketplace",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
-  "keywords": ["android", "kotlin", "mobile", "development"],
+  "keywords": ["android", "kotlin", "mobile", "development", "roadmap"],
   "agents": [
     {
-      "name": "kotlin-essentials",
-      "path": "agents/01-kotlin-essentials.md",
-      "description": "Master Kotlin programming language for Android"
+      "name": "fundamentals",
+      "path": "agents/01-fundamentals.md",
+      "description": "Kotlin, Java, OOP, SOLID principles - programming foundations for Android"
     },
     {
-      "name": "android-core",
-      "path": "agents/02-android-core.md",
-      "description": "Android platform fundamentals and lifecycle"
+      "name": "platform",
+      "path": "agents/02-platform.md",
+      "description": "Android core components - Activities, Fragments, Services, Lifecycle"
     },
     {
-      "name": "jetpack-modern",
-      "path": "agents/03-jetpack-modern.md",
-      "description": "Modern Android development with Jetpack"
+      "name": "ui-development",
+      "path": "agents/03-ui-development.md",
+      "description": "UI development - XML Layouts, ConstraintLayout, Jetpack Compose, Material Design"
     },
     {
-      "name": "architecture-solid",
-      "path": "agents/04-architecture-solid.md",
-      "description": "MVVM, Clean Architecture, and design patterns"
+      "name": "data-management",
+      "path": "agents/04-data-management.md",
+      "description": "Data storage - Room ORM, SQLite, SharedPreferences, DataStore"
+    },
+    {
+      "name": "networking",
+      "path": "agents/05-networking.md",
+      "description": "API integration - Retrofit, OkHttp, REST APIs, JSON processing"
+    },
+    {
+      "name": "architecture",
+      "path": "agents/06-architecture.md",
+      "description": "Architecture patterns - MVVM, Clean Architecture, Repository, SOLID"
+    },
+    {
+      "name": "production",
+      "path": "agents/07-production.md",
+      "description": "Testing, Performance, Security, Deployment - production-ready development"
     }
   ],
   "commands": [
     {
-      "name": "dev-guide",
-      "path": "commands/dev-guide.md",
-      "description": "Android development best practices guide"
+      "name": "roadmap",
+      "path": "commands/roadmap.md",
+      "description": "Android development roadmap with learning paths"
     },
     {
-      "name": "code-examples",
-      "path": "commands/code-examples.md",
-      "description": "Real-world code examples and patterns"
+      "name": "agent-guide",
+      "path": "commands/agent-guide.md",
+      "description": "Comprehensive guide to all 7 agents and their expertise areas"
     },
     {
-      "name": "quick-help",
-      "path": "commands/quick-help.md",
-      "description": "Quick help for common Android tasks"
+      "name": "quick-start",
+      "path": "commands/quick-start.md",
+      "description": "Quick start guide and essential resources"
     }
   ],
   "skills": [
     {
-      "name": "kotlin-core",
-      "path": "skills/01-kotlin-core/SKILL.md",
-      "description": "Kotlin syntax, coroutines, and idioms"
+      "name": "kotlin-fundamentals",
+      "path": "skills/fundamentals/SKILL.md",
+      "description": "Kotlin language, OOP, SOLID principles, functional programming"
     },
     {
-      "name": "jetpack-essential",
-      "path": "skills/02-jetpack-essential/SKILL.md",
-      "description": "ViewModel, LiveData, Room, Navigation"
+      "name": "android-platform",
+      "path": "skills/platform/SKILL.md",
+      "description": "Android components, lifecycle management, services, permissions"
     },
     {
-      "name": "architecture-patterns",
-      "path": "skills/03-architecture-patterns/SKILL.md",
-      "description": "MVVM, Repository pattern, Dependency injection"
+      "name": "ui-design",
+      "path": "skills/ui/SKILL.md",
+      "description": "XML layouts, ConstraintLayout, Jetpack Compose, Material Design"
     },
     {
-      "name": "android-production",
-      "path": "skills/04-android-production/SKILL.md",
-      "description": "Testing, performance, security, deployment"
+      "name": "data-persistence",
+      "path": "skills/data/SKILL.md",
+      "description": "Room ORM, SQLite, SharedPreferences, DataStore, encryption"
+    },
+    {
+      "name": "api-integration",
+      "path": "skills/networking/SKILL.md",
+      "description": "Retrofit, OkHttp, REST APIs, JSON processing, networking"
+    },
+    {
+      "name": "app-architecture",
+      "path": "skills/architecture/SKILL.md",
+      "description": "MVVM, Clean Architecture, Repository Pattern, SOLID principles"
+    },
+    {
+      "name": "production-quality",
+      "path": "skills/production/SKILL.md",
+      "description": "Testing, performance optimization, security, Play Store deployment"
     }
   ]
 }

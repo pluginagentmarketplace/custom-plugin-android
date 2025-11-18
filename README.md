@@ -1,337 +1,205 @@
 # custom-plugin-android
 
-Professional Android development plugin for Claude Code. Complete reference and guidance for building production-grade Android applications.
+**Professional Android Development Plugin for Claude Code**
+
+Ultra-comprehensive Android development guide with **7 specialized agents**, **7 invokable skills**, **3 interactive commands**, and **757+ hours of content**.
+
+Based on [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) Android pathway.
 
 ## Features
 
-### 4 Specialized Agents
-- **Kotlin Essentials** - Master modern Kotlin programming
-- **Android Core** - Platform fundamentals and lifecycle
-- **Jetpack Modern** - Modern Android development libraries
-- **Architecture SOLID** - MVVM, Clean Architecture, design patterns
+### 7 Specialized Agents
+1. **Fundamentals** (172h) - Kotlin, OOP, SOLID, algorithms
+2. **Platform** (78h) - Android components, lifecycle
+3. **UI Development** (235h) - Layouts, Compose, Material Design
+4. **Data Management** (62h) - Room, SQLite, DataStore
+5. **Networking** (75h) - Retrofit, OkHttp, APIs
+6. **Architecture** (40h) - MVVM, Clean Architecture
+7. **Production** (95h) - Testing, security, deployment
+
+### 7 Invokable Skills
+- `kotlin-fundamentals`: Language essentials
+- `android-platform`: Component lifecycle
+- `ui-design`: Layout and UI building
+- `data-persistence`: Database and storage
+- `api-integration`: Networking and APIs
+- `app-architecture`: Design patterns
+- `production-quality`: Testing and deployment
 
 ### 3 Interactive Commands
-- `/dev-guide` - Complete development best practices
-- `/code-examples` - Production-ready code patterns
-- `/quick-help` - Fast reference for common tasks
+- `/roadmap` - 7-step learning path with timeline
+- `/agent-guide` - Detailed guide to all agents
+- `/quick-start` - Essential resources and quick solutions
 
-### 4 Invokable Skills
-- **kotlin-core** - Kotlin syntax and coroutines
-- **jetpack-essential** - ViewModel, LiveData, Room, Navigation
-- **architecture-patterns** - MVVM, Repository, SOLID principles
-- **android-production** - Testing, performance, security, deployment
+## Installation
+
+### Option 1: Load Locally (Fastest)
+```bash
+# In Claude Code:
+File → Load Plugin → /home/user/custom-plugin-android
+```
+
+### Option 2: From GitHub
+```bash
+git clone https://github.com/pluginagentmarketplace/custom-plugin-android.git
+# Then load in Claude Code
+```
 
 ## Quick Start
 
-### Installation
-
-```bash
-# Load from directory in Claude Code
-File → Load Plugin → custom-plugin-android
-```
-
-### First Steps
-
-1. **Get oriented:**
+1. **View learning roadmap:**
    ```
-   /dev-guide
+   /roadmap
    ```
 
-2. **See code examples:**
+2. **Explore all agents:**
    ```
-   /code-examples
+   /agent-guide
    ```
 
-3. **Quick help on specific topic:**
+3. **Get quick help:**
    ```
-   /quick-help
+   /quick-start
    ```
 
 ## Learning Path
 
-### Beginner (100-150 hours)
-1. Kotlin Fundamentals (30-40h)
-2. Android Core (40-50h)
-3. First App Project (30-60h)
+### Total Duration: 37-45 weeks
+- @ 2 hours/day: 45+ weeks
+- @ 3 hours/day: 30+ weeks  
+- @ 4 hours/day: 19-24 weeks
 
-### Intermediate (100-150 hours)
-1. Jetpack Modern (40-50h)
-2. Architecture Patterns (40-50h)
-3. Real-World App (20-50h)
-
-### Advanced (100-200+ hours)
-1. Production Quality (50-100h)
-2. Capstone Project (50-100+h)
-
-## Tech Stack
-
-**UI Layer:**
-- Activities/Fragments or Jetpack Compose
-- Navigation Component
-- Material Design 3
-
-**Architecture:**
-- MVVM with ViewModel
-- Repository pattern
-- Hilt for dependency injection
-
-**Data:**
-- Room database
-- Retrofit for APIs
-- DataStore for preferences
-
-**Testing:**
-- JUnit 4/5
-- Mockk for mocking
-- Espresso for UI tests
-
-**Production:**
-- Performance optimization
-- Security best practices
-- Play Store deployment
+### Recommended Sequence
+1. Fundamentals (8-10 weeks)
+2. Platform (4-5 weeks)
+3. UI Development (10-12 weeks)
+4. Data Management (3-4 weeks)
+5. Networking (4-5 weeks)
+6. Architecture (2-3 weeks)
+7. Production (5-6 weeks)
 
 ## Plugin Structure
 
 ```
 custom-plugin-android/
 ├── .claude-plugin/
-│   └── plugin.json
-├── agents/
-│   ├── 01-kotlin-essentials.md
-│   ├── 02-android-core.md
-│   ├── 03-jetpack-modern.md
-│   └── 04-architecture-solid.md
-├── commands/
-│   ├── dev-guide.md
-│   ├── code-examples.md
-│   └── quick-help.md
-├── skills/
-│   ├── 01-kotlin-core/SKILL.md
-│   ├── 02-jetpack-essential/SKILL.md
-│   ├── 03-architecture-patterns/SKILL.md
-│   └── 04-android-production/SKILL.md
-├── README.md
-└── LICENSE
+│   └── plugin.json              # Plugin manifest
+├── agents/                      # 7 Agent markdown files
+│   ├── 01-fundamentals.md
+│   ├── 02-platform.md
+│   ├── 03-ui-development.md
+│   ├── 04-data-management.md
+│   ├── 05-networking.md
+│   ├── 06-architecture.md
+│   └── 07-production.md
+├── commands/                    # 3 Interactive commands
+│   ├── roadmap.md
+│   ├── agent-guide.md
+│   └── quick-start.md
+├── skills/                      # 7 Invokable skills
+│   ├── fundamentals/SKILL.md
+│   ├── platform/SKILL.md
+│   ├── ui/SKILL.md
+│   ├── data/SKILL.md
+│   ├── networking/SKILL.md
+│   ├── architecture/SKILL.md
+│   └── production/SKILL.md
+├── README.md                    # This file
+└── LICENSE                      # MIT License
 ```
 
-## Agents
+## Content Overview
 
-### Kotlin Essentials
-Master Kotlin programming language - essential foundation for Android development.
+| Agent | Hours | Topics | Level |
+|-------|-------|--------|-------|
+| Fundamentals | 172 | Kotlin, OOP, SOLID | Beginner |
+| Platform | 78 | Activities, Fragments, Services | Beginner |
+| UI Development | 235 | Layouts, Compose, Material | Intermediate |
+| Data Management | 62 | Room, SQLite, DataStore | Intermediate |
+| Networking | 75 | Retrofit, OkHttp, APIs | Intermediate |
+| Architecture | 40 | MVVM, Clean Arch, Patterns | Advanced |
+| Production | 95 | Testing, Security, Deploy | Advanced |
+| **TOTAL** | **757+** | **50+ Topics** | - |
 
-**Topics:**
-- Syntax and language features
-- Coroutines and async
-- Extension functions
-- Functional programming
-- Null safety and type system
+## Key Features
 
-### Android Core
-Learn Android platform fundamentals including Activities, Fragments, lifecycle, and components.
+✅ **Comprehensive**: 757+ hours of professional content
+✅ **Structured**: 7-step progressive learning path
+✅ **Practical**: Real-world code examples throughout
+✅ **Current**: Based on latest Android practices (2024)
+✅ **Accessible**: Works offline, no external dependencies
+✅ **Interactive**: Commands for navigation and exploration
+✅ **Production-Ready**: Covers testing, security, deployment
 
-**Topics:**
-- Activity and Fragment lifecycle
-- Intent system
-- Data persistence
-- Services and background tasks
-- Permissions and security
+## For Quick Help
 
-### Jetpack Modern
-Build with Google's recommended Jetpack libraries for modern Android development.
+Use `/quick-start` for:
+- Common Android questions
+- Quick code solutions
+- Essential resource links
+- Project setup guidance
 
-**Topics:**
-- ViewModel and LiveData
-- Room database
-- Navigation Component
-- Hilt dependency injection
-- WorkManager and DataStore
+## For Deep Learning
 
-### Architecture SOLID
-Design scalable and maintainable applications with proven architectural patterns.
+Choose an agent from `/agent-guide` for:
+- Complete concept explanations
+- Code examples and patterns
+- Best practices and pitfalls
+- Learning timelines
 
-**Topics:**
-- MVVM architecture
-- Clean Architecture principles
-- Repository pattern
-- SOLID principles
-- Design patterns for Android
-- Testing and security
+## Best Practices Throughout
 
-## Skills
+- **SOLID Principles**: Applied in every agent
+- **Testing**: Unit, integration, and UI testing
+- **Security**: Encryption, HTTPS, permissions
+- **Performance**: Memory, battery, startup optimization
+- **Architecture**: MVVM, Clean Architecture patterns
+- **Modern APIs**: AndroidX, Jetpack, Kotlin coroutines
 
-### kotlin-core
-Kotlin syntax, coroutines, scope functions, and functional programming patterns.
+## Requirements
 
-### jetpack-essential
-ViewModel, LiveData, Room, Navigation, Hilt - essential Jetpack libraries.
+- Android Studio 2022.1+
+- Gradle 7.0+
+- Kotlin 1.8+
+- Android SDK 24+ (min API level)
+- Java 11+
 
-### architecture-patterns
-MVVM, Repository pattern, Dependency injection, and SOLID principles.
+## Repository Information
 
-### android-production
-Testing, performance optimization, security best practices, and Play Store deployment.
-
-## Commands
-
-### /dev-guide
-Complete development guide covering:
-- Learning paths (beginner → advanced)
-- Recommended tech stack
-- Project structure
-- Best practices
-- Development workflow
-- Tools and libraries
-- Success criteria
-
-### /code-examples
-Production-ready code examples for:
-- Complete MVVM pattern
-- Room database setup
-- Repository pattern implementation
-- Retrofit networking
-- Hilt dependency injection
-- Unit testing
-- Navigation
-- WorkManager
-- Secure data storage
-
-### /quick-help
-Quick reference for:
-- Learning Android development
-- Building new apps
-- Specific Android tasks
-- Common errors
-- Performance optimization
-- Useful commands
-- Resources
-
-## Best Practices Summary
-
-### Architecture
-✅ MVVM with ViewModel
-✅ Repository pattern for data
-✅ Dependency injection with Hilt
-✅ Clear separation of concerns
-✅ SOLID principles
-
-### Code Quality
-✅ Follow clean code principles
-✅ Unit test critical logic
-✅ UI tests for critical flows
-✅ 80%+ test coverage goal
-✅ Lint and static analysis
-
-### Performance
-✅ No memory leaks
-✅ 60+ FPS rendering
-✅ Fast app startup (< 5s)
-✅ Efficient database queries
-✅ Proper coroutine scoping
-
-### Security
-✅ No hardcoded secrets
-✅ HTTPS for all APIs
-✅ Encrypted sensitive data
-✅ Proper permission handling
-✅ Input validation
-
-## Development Workflow
-
-1. **Plan** - Design architecture and data models
-2. **Setup** - Create project and configure dependencies
-3. **Implement** - Build features incrementally
-4. **Test** - Write tests while coding
-5. **Optimize** - Performance and memory profiling
-6. **Polish** - UI/UX refinement
-7. **Release** - Build, sign, and deploy
-8. **Monitor** - Track crashes and analytics
-
-## Common Issues
-
-**"Can't create instance of ViewModel"**
-- Add @HiltViewModel annotation
-- Ensure constructor parameters are provided
-
-**"Memory leak detected"**
-- Unregister listeners in onDestroy()
-- Avoid holding Context references
-- Use WeakReference when needed
-
-**"ANR - Application Not Responding"**
-- Move heavy operations to background thread
-- Use coroutines properly
-- Profile with Android Profiler
-
-**"Null pointer exception on view"**
-- Verify layout file has view with correct ID
-- Check view binding is initialized
-- Use safe navigation (?.)
-
-## Essential Resources
-
-**Official Documentation:**
-- [Android Developer Docs](https://developer.android.com)
-- [Kotlin Official Docs](https://kotlinlang.org/docs/)
-- [Jetpack Architecture Guide](https://developer.android.com/jetpack/guide)
-
-**Training:**
-- [Google Codelabs](https://developer.android.com/codelabs)
-- [Android Developers Blog](https://android-developers.googleblog.com)
-
-**Tools:**
-- [Android Studio](https://developer.android.com/studio)
-- [Firebase Test Lab](https://firebase.google.com/docs/test-lab)
-- [Google Play Console](https://play.google.com/console)
-
-## Release Checklist
-
-Before deploying to Google Play:
-
-- ✅ All tests passing
-- ✅ No crashes or leaks
-- ✅ 60+ FPS rendering
-- ✅ Security reviewed
-- ✅ Code obfuscated
-- ✅ Version code incremented
-- ✅ App signed correctly
-- ✅ Tested on multiple devices
-- ✅ Crash reporting configured
-- ✅ Analytics integrated
-
-## Success Metrics
-
-- App runs without crashes
-- 80%+ test coverage
-- No memory leaks
-- 60+ FPS performance
-- < 5 second cold start
-- Follows SOLID principles
-- Clear code structure
-- Proper error handling
-- Security reviewed
-- Published on Play Store
+- **Repository**: https://github.com/pluginagentmarketplace/custom-plugin-android
+- **License**: MIT
+- **Based On**: developer-roadmap.sh
+- **Version**: 1.0.0
+- **Updated**: 2024
 
 ## Contributing
 
-Contributions are welcome! Areas for improvement:
+Contributions welcome! Areas for enhancement:
 - Additional code examples
-- More detailed agents
 - Video tutorial links
-- Translations
-- Additional resources
+- More detailed explanations
+- Community resources
 
 ## License
 
 MIT License - See LICENSE file
 
-## About
+## Feedback & Support
 
-This plugin provides professional guidance for Android development using modern best practices, proven architectural patterns, and production-ready code examples.
-
-Built for developers who want to write high-quality, maintainable Android applications.
+- GitHub Issues: [Report bugs](https://github.com/pluginagentmarketplace/custom-plugin-android/issues)
+- Discussions: [Share ideas](https://github.com/pluginagentmarketplace/custom-plugin-android/discussions)
 
 ---
 
-**Ready to build professional Android apps?**
+## Next Steps
 
-Start with `/dev-guide` or `/quick-help`!
+1. **First time?** → Run `/quick-start`
+2. **Want learning path?** → Run `/roadmap`
+3. **Explore agents?** → Run `/agent-guide`
+4. **Ready to learn?** → Choose starting agent
+
+**Happy learning! Build amazing Android apps with professional practices.** 🚀
+
+---
+
+Made with ❤️ for Android developers everywhere.

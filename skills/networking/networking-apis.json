@@ -1,0 +1,284 @@
+{
+  "title": "Networking & APIs - Android Development",
+  "description": "Android uygulamalarında HTTP istek/yanıt yönetimi, REST API entegrasyonu, JSON veri işleme ve ağ iletişimi için kapsamlı rehber. Retrofit, OkHttp gibi modern kütüphanelerle verimli API haberleşmesi, hata yönetimi, güvenlik ve performans optimizasyonu.",
+  "capabilities": [
+    "REST API tasarımı ve tüketimi",
+    "HTTP istek/yanıt yönetimi",
+    "JSON veri serileştirme/deserileştirme",
+    "Retrofit ile type-safe API tanımları",
+    "OkHttp konfigürasyonu ve interceptor'ları",
+    "Hata yönetimi ve retry stratejileri",
+    "SSL/TLS ve güvenlik ayarları",
+    "Ağ bağlantı durumu kontrol etme",
+    "Veri sıkıştırma ve performans optimizasyonu",
+    "Mock server'lar ile test etme",
+    "Pagination ve veri akışı yönetimi",
+    "File upload/download operasyonları",
+    "Token yönetimi ve Bearer authentication",
+    "Network monitoring ve connectivity tracking"
+  ],
+  "main_topics": [
+    {
+      "title": "REST APIs Temelleri",
+      "subtopics": [
+        "HTTP Metotları (GET, POST, PUT, PATCH, DELETE)",
+        "HTTP Durum Kodları (2xx, 3xx, 4xx, 5xx)",
+        "API Design Best Practices",
+        "Endpoint Tasarımı",
+        "Query Parameters",
+        "Request/Response Headers"
+      ]
+    },
+    {
+      "title": "JSON - JavaScript Object Notation",
+      "subtopics": [
+        "JSON Veri Yapısı ve Tipleri",
+        "Android'de Manual JSON Parsing (JSONObject, JSONArray)",
+        "GSON Kütüphanesi ile Serileştirme",
+        "Moshi ile Type-Safe JSON Processing",
+        "@SerializedName Anotasyonları",
+        "Custom JSON Deserializers"
+      ]
+    },
+    {
+      "title": "OkHttp - HTTP İstemci",
+      "subtopics": [
+        "OkHttp Temel Kurulumu",
+        "GET/POST İstekleri",
+        "Request Body ve MediaType",
+        "Interceptor'lar (Logging, Authentication, Connectivity)",
+        "Timeout Ayarları",
+        "Retry Politikası",
+        "Connection Pooling",
+        "Hata Yönetimi"
+      ]
+    },
+    {
+      "title": "Retrofit - Type-Safe HTTP İstemci",
+      "subtopics": [
+        "Retrofit Kurulumu ve Konfigürasyonu",
+        "API Interface Tanımı",
+        "@GET, @POST, @PUT, @DELETE Anotasyonları",
+        "@Path, @Query, @Header, @Body Parametreleri",
+        "@Multipart File Upload",
+        "Call Adapters (Coroutine, RxJava, LiveData, Flow)",
+        "Converter Factories (Gson, Moshi)",
+        "Error Handling Patterns"
+      ]
+    },
+    {
+      "title": "Ağ Bağlantı Yönetimi",
+      "subtopics": [
+        "Bağlantı Durumu Kontrol Etme",
+        "Network Capabilities Kontrol",
+        "WiFi/Cellular Durumu Tespiti",
+        "Network Callbacks",
+        "Connectivity Interceptor",
+        "Offline Mode Desteği"
+      ]
+    },
+    {
+      "title": "Güvenlik (Security)",
+      "subtopics": [
+        "SSL/TLS Konfigürasyonu",
+        "Certificate Pinning",
+        "Token Yönetimi",
+        "Bearer Token Interceptor",
+        "JWT (JSON Web Token)",
+        "Encrypted SharedPreferences",
+        "Token Refresh Mekanizması",
+        "HTTPS Best Practices"
+      ]
+    },
+    {
+      "title": "İleri Konular",
+      "subtopics": [
+        "Pagination Implementasyonu",
+        "File Upload/Download",
+        "Request/Response Interceptors",
+        "Caching Stratejileri",
+        "Rate Limiting",
+        "Data Compression",
+        "Batch Requests"
+      ]
+    },
+    {
+      "title": "Testing",
+      "subtopics": [
+        "MockWebServer ile Unit Testing",
+        "Mock API Response'ları",
+        "Repository Testing",
+        "Network Failure Scenarios",
+        "Timeout ve Connection Tests",
+        "Integration Testing"
+      ]
+    },
+    {
+      "title": "Praktik Örnekler",
+      "subtopics": [
+        "Complete API Integration Flow",
+        "MVVM Architektürü ile API",
+        "Error Handling Best Practices",
+        "Logging ve Debugging",
+        "Performance Optimization"
+      ]
+    }
+  ],
+  "learning_hours": {
+    "beginner": {
+      "duration_hours": 20,
+      "topics": [
+        "REST API Temelleri",
+        "JSON Temel İşleme",
+        "OkHttp Basit Kullanımı",
+        "Retrofit Temel Kurulumu",
+        "Basit GET/POST İstekleri"
+      ]
+    },
+    "intermediate": {
+      "duration_hours": 30,
+      "topics": [
+        "Advanced Interceptors",
+        "Error Handling Patterns",
+        "Pagination Implementasyonu",
+        "Token Management",
+        "Network Monitoring",
+        "File Upload/Download"
+      ]
+    },
+    "advanced": {
+      "duration_hours": 25,
+      "topics": [
+        "SSL/TLS Security",
+        "Certificate Pinning",
+        "Custom Call Adapters",
+        "Advanced Caching",
+        "Performance Optimization",
+        "Comprehensive Testing"
+      ]
+    },
+    "total_recommended": 75
+  },
+  "required_dependencies": {
+    "retrofit": {
+      "name": "com.squareup.retrofit2:retrofit",
+      "version": "2.10.0"
+    },
+    "okhttp": {
+      "name": "com.squareup.okhttp3:okhttp",
+      "version": "4.11.0"
+    },
+    "gson": {
+      "name": "com.squareup.retrofit2:converter-gson",
+      "version": "2.10.0"
+    },
+    "logging_interceptor": {
+      "name": "com.squareup.okhttp3:logging-interceptor",
+      "version": "4.11.0"
+    },
+    "moshi": {
+      "name": "com.squareup.moshi:moshi-kotlin",
+      "version": "1.15.0"
+    },
+    "coroutines": {
+      "name": "org.jetbrains.kotlinx:kotlinx-coroutines-android",
+      "version": "1.7.3"
+    },
+    "security": {
+      "name": "androidx.security:security-crypto",
+      "version": "1.1.0-alpha06"
+    }
+  },
+  "best_practices": [
+    "Her zaman type-safe API interfaces kullanın (Retrofit)",
+    "Interceptor'lar ile centralized request/response handling yapın",
+    "Timeout değerlerini mantıklı şekilde ayarlayın (30+ saniye)",
+    "Token'ları EncryptedSharedPreferences'de saklayın",
+    "Bağlantı durumunu kontrol edip offline mode'u destekleyin",
+    "Network işlemlerini IO Dispatcher'da çalıştırın",
+    "Error handling için sealed class pattern kullanın",
+    "SSL/TLS certificate pinning implementasyonu yapın",
+    "Logging interceptor'ını production'da disable edin",
+    "Mock server'lar ile comprehensive test coverage sağlayın",
+    "Request/response sürelerini monitor edin",
+    "Pagination için cursor-based yaklaşımı tercih edin",
+    "File transfer'lar için progress callback'ler ekleyin",
+    "Rate limiting'i göz önünde bulundurun"
+  ],
+  "common_mistakes": [
+    "Main thread'de network işlemleri yapmak",
+    "Timeout değerlerini çok düşük ayarlamak",
+    "Error response body'sini okuyor olmak",
+    "Token refresh'i doğru implemente etmemek",
+    "Interceptor'larda exception handling'i unutmak",
+    "Connection pool'u düzgün konfigüre etmemek",
+    "Mock response'ları production'da bırakmak",
+    "Memory leak'ler için Retrofit lifecycle'ını yönetmemek",
+    "SSL/TLS pinning'i implement etmemek",
+    "Network errors'ı user'a göstermemek"
+  ],
+  "tools_and_resources": [
+    {
+      "name": "Retrofit",
+      "url": "https://square.github.io/retrofit/",
+      "purpose": "Type-safe HTTP client"
+    },
+    {
+      "name": "OkHttp",
+      "url": "https://square.github.io/okhttp/",
+      "purpose": "HTTP client library"
+    },
+    {
+      "name": "Postman",
+      "url": "https://www.postman.com/",
+      "purpose": "API testing ve debugging"
+    },
+    {
+      "name": "MockWebServer",
+      "url": "https://github.com/square/okhttp/tree/master/mockwebserver",
+      "purpose": "Unit testing için mock server"
+    },
+    {
+      "name": "Android Network Monitor",
+      "url": "https://developer.android.com/studio/profile/network-profiler",
+      "purpose": "Network activity monitoring"
+    },
+    {
+      "name": "JSON Formatter & Validator",
+      "url": "https://jsonformatter.org/",
+      "purpose": "JSON debugging"
+    }
+  ],
+  "practical_projects": [
+    {
+      "title": "Weather App",
+      "description": "OpenWeather API ile hava durumu uygulaması",
+      "difficulty": "Beginner",
+      "key_concepts": ["GET requests", "JSON parsing", "Error handling"]
+    },
+    {
+      "title": "Social Media Feed",
+      "description": "Paginated list ile sosyal medya feed uygulaması",
+      "difficulty": "Intermediate",
+      "key_concepts": ["Pagination", "Caching", "Refreshing"]
+    },
+    {
+      "title": "User Authentication System",
+      "description": "Token-based authentication ile login/register sistemi",
+      "difficulty": "Intermediate",
+      "key_concepts": ["Token management", "Interceptors", "Refresh tokens"]
+    },
+    {
+      "title": "File Upload Service",
+      "description": "Multipart file upload ve progress tracking",
+      "difficulty": "Advanced",
+      "key_concepts": ["Multipart requests", "Progress callbacks", "Resumable uploads"]
+    },
+    {
+      "title": "Real-time Chat App",
+      "description": "WebSocket ve REST API kombinasyonu ile chat uygulaması",
+      "difficulty": "Advanced",
+      "key_concepts": ["WebSocket", "Message queuing", "Offline support"]
+    }
+  ]
+}

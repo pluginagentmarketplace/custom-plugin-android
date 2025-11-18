@@ -1,0 +1,220 @@
+{
+  "title": "Android Data Management & Storage",
+  "description": "Android'de veri depolama ve yönetiminin kapsamlı rehberi. Room ORM, SQLite, SharedPreferences ve DataStore teknolojilerinin detaylı öğretimi, best practices ve implementasyon örnekleri sunmaktadır.",
+  "capabilities": [
+    "Room ORM Kütüphanesi - Entity, DAO, Database tanımı",
+    "SQLite Veritabanı - Direct SQL sorguları ve işlemleri",
+    "SharedPreferences - Basit anahtar-değer depolama",
+    "Encrypted SharedPreferences - Güvenli veri saklama",
+    "DataStore Preferences - Modern SharedPreferences alternatifi",
+    "Proto DataStore - Type-safe veri depolama",
+    "Veri Migrasyonu - SharedPreferences'tan DataStore'a geçiş",
+    "Veri Şifreleme - EncryptedFile ve encryption schemes",
+    "Transaction Yönetimi - Batch işlemler ve atomic updates",
+    "İlişkisel Veritabanı Tasarımı - Foreign keys ve relationships",
+    "Performans Optimizasyonu - Indexing, query optimization",
+    "Flow Integration - Reaktif veri güncellemeleri",
+    "Koroutine Support - Async veri işlemleri",
+    "Dependency Injection - Hilt ile integration",
+    "Database Testing - In-memory test database'ler",
+    "DataStore Testing - Preferences DataStore test etme"
+  ],
+  "main_topics": [
+    {
+      "name": "Room ORM (Recommended)",
+      "subtopics": [
+        "Entity sınıfları ve anotasyonlar",
+        "DAO (Data Access Object) pattern",
+        "Database sınıfı ve singleton pattern",
+        "Foreign key relationships",
+        "Query anotasyonları (Select, Insert, Update, Delete)",
+        "OnConflictStrategy stratejileri",
+        "Batch insert ve transaction işlemleri",
+        "Flow with Room - Reaktif sorguları",
+        "Suspend functions ile async veri işlemleri",
+        "Database migration yönetimi",
+        "Repository pattern ile Room entegrasyonu",
+        "Room ile testing best practices"
+      ],
+      "learning_hours": 12
+    },
+    {
+      "name": "SQLite Veritabanı",
+      "subtopics": [
+        "SQLiteOpenHelper sınıfı",
+        "Direct SQL sorguları yazma",
+        "ContentValues ile veri ekleme",
+        "Cursor yönetimi ve memory leak prevention",
+        "CREATE, ALTER, DROP operasyonları",
+        "WHERE clause ve filtering",
+        "ORDER BY ve sorting",
+        "JOIN operasyonları",
+        "Index oluşturma ve performans",
+        "Transaction API'ları",
+        "WAL (Write-Ahead Logging) mode",
+        "SQLite limit ve best practices"
+      ],
+      "learning_hours": 8
+    },
+    {
+      "name": "SharedPreferences",
+      "subtopics": [
+        "SharedPreferences temel API'ı",
+        "Veri tipleri - String, Int, Boolean, Long, Float",
+        "Editor pattern ile batch updates",
+        "apply() vs commit() farkı",
+        "Default değerleri yönetme",
+        "Tüm preferences silme (clear vs remove)",
+        "Encrypted SharedPreferences setup",
+        "MasterKey oluşturma ve yönetimi",
+        "Encryption scheme seçimi",
+        "Legacy SharedPreferences'ten geçiş",
+        "SharedPreferences limitations",
+        "Security best practices"
+      ],
+      "learning_hours": 5
+    },
+    {
+      "name": "DataStore (Modern Alternative)",
+      "subtopics": [
+        "Preferences DataStore yapısı",
+        "PreferencesKey tanımlama",
+        "Suspend functions ile async işlemler",
+        "Flow<T> ile reaktif okuma",
+        "edit() ve updateData() operations",
+        "Exception handling ve recovery",
+        "Proto DataStore - Type-safe storage",
+        ".proto dosya tanımı ve compilation",
+        "Serializer implementasyonu",
+        "Proto message operations",
+        "DataStore vs SharedPreferences karşılaştırması",
+        "Migration strategies"
+      ],
+      "learning_hours": 8
+    },
+    {
+      "name": "Veri Şifreleme ve Güvenlik",
+      "subtopics": [
+        "MasterKey Builder API'ı",
+        "AES256_GCM encryption scheme",
+        "EncryptedFile implementasyonu",
+        "FileEncryptionScheme seçimi",
+        "EncryptedSharedPreferences kurulumu",
+        "PrefKeyEncryptionScheme",
+        "PrefValueEncryptionScheme",
+        "Sensitive data handling",
+        "Encryption key management",
+        "Secure token storage",
+        "API key ve credential depolama",
+        "Security audit best practices"
+      ],
+      "learning_hours": 6
+    },
+    {
+      "name": "Veri Migrasyonu",
+      "subtopics": [
+        "Database version management",
+        "Migration sınıfları oluşturma",
+        "Schema changes planning",
+        "Data transformation işlemleri",
+        "SharedPreferences'tan DataStore'a geçiş",
+        "Backward compatibility",
+        "Multi-step migrations",
+        "Fallback strategies",
+        "Testing migrations",
+        "User data integrity",
+        "Migration scheduling",
+        "Rollback planları"
+      ],
+      "learning_hours": 7
+    },
+    {
+      "name": "Performans Optimizasyonu",
+      "subtopics": [
+        "Veritabanı indexing",
+        "Query optimization",
+        "Batch işlemleri",
+        "Transaction management",
+        "Lazy loading strategies",
+        "Pagination patterns",
+        "Memory management",
+        "Disk I/O optimization",
+        "Caching strategies",
+        "DataStore file size optimization",
+        "Profiling tools",
+        "Performance testing"
+      ],
+      "learning_hours": 8
+    },
+    {
+      "name": "Testing ve Best Practices",
+      "subtopics": [
+        "In-memory database testing",
+        "DAO unit tests",
+        "Flow test collection",
+        "DataStore test setup",
+        "Test doubles ve mocking",
+        "Integration testing",
+        "Database migration testing",
+        "Encryption testing",
+        "Repository testing",
+        "ViewModel testing",
+        "E2E data scenarios",
+        "Performance testing"
+      ],
+      "learning_hours": 8
+    }
+  ],
+  "learning_hours": 62,
+  "practical_projects": [
+    {
+      "title": "Todo App with Room",
+      "description": "Room'u kullanarak basit bir Todo uygulaması - Entity tanımı, DAO operasyonları, Flow ile dinamik güncellemeler",
+      "estimated_hours": 4
+    },
+    {
+      "title": "User Profile Manager",
+      "description": "SharedPreferences, DataStore ve encrypted storage kombinasyonu ile kullanıcı profili yönetimi",
+      "estimated_hours": 5
+    },
+    {
+      "title": "E-Commerce Database",
+      "description": "Kompleks ilişkisel veri modeli - Products, Categories, Orders, Reviews (Room, Foreign keys, Transactions)",
+      "estimated_hours": 8
+    },
+    {
+      "title": "Offline-First App",
+      "description": "Room, DataStore ve sync mekanizması - Local storage ve remote server senkronizasyonu",
+      "estimated_hours": 10
+    },
+    {
+      "title": "Settings Management System",
+      "description": "Proto DataStore ile type-safe ayarlar - Theme, Language, Notifications configuration",
+      "estimated_hours": 6
+    }
+  ],
+  "prerequisites": [
+    "Android Fundamentals (Activity, Fragment, Context)",
+    "Kotlin Basics (Coroutines, Flow)",
+    "Architecture Patterns (MVVM, Repository)",
+    "Dependency Injection (Hilt)"
+  ],
+  "resources": {
+    "official": [
+      "https://developer.android.com/training/data-storage/room",
+      "https://developer.android.com/topic/libraries/architecture/datastore",
+      "https://developer.android.com/training/data-storage/shared-preferences",
+      "https://developer.android.com/training/data-storage/sqlite"
+    ],
+    "documentation": [
+      "Room Architecture Components Guide",
+      "DataStore Best Practices",
+      "Android Security & Privacy",
+      "Database Design Principles"
+    ]
+  },
+  "level": "Intermediate to Advanced",
+  "estimated_completion": "8-10 weeks",
+  "hands_on_code_examples": 45,
+  "quiz_questions": 50
+}

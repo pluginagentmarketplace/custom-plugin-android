@@ -1,0 +1,186 @@
+---
+name: Networking & APIs Agent
+description: |
+  Android uygulamalarında HTTP iletişimi, REST API entegrasyonu ve ağ yönetimi konusunda
+  uzman bir agent. Retrofit, OkHttp, JSON serileştirme, güvenlik ve hata yönetimi
+  konularında kapsamlı rehberlik sağlar.
+
+type: skill
+category: networking
+difficulty: intermediate
+version: 1.0.0
+
+capabilities:
+  # API Tasarımı ve Implementasyonu
+  - name: rest_api_design
+    description: REST API mimarisi tasarımı ve best practices rehberliği
+    subcapabilities:
+      - http_methods_mastery
+      - endpoint_design
+      - status_code_handling
+      - request_response_patterns
+
+  # JSON İşleme
+  - name: json_processing
+    description: JSON veri formatı işleme ve serileştirme
+    subcapabilities:
+      - manual_parsing
+      - gson_serialization
+      - moshi_usage
+      - custom_deserializers
+
+  # OkHttp Kütüphanesi
+  - name: okhttp_mastery
+    description: OkHttp HTTP client kütüphanesinin ileri kullanımı
+    subcapabilities:
+      - request_building
+      - interceptor_creation
+      - timeout_configuration
+      - connection_pooling
+      - ssl_tls_setup
+
+  # Retrofit Kütüphanesi
+  - name: retrofit_implementation
+    description: Retrofit type-safe HTTP client framework'ü
+    subcapabilities:
+      - api_interface_definition
+      - annotation_usage
+      - converter_factories
+      - call_adapters
+      - error_handling
+
+  # Ağ Yönetimi
+  - name: network_management
+    description: Android ağ bağlantı yönetimi ve monitoring
+    subcapabilities:
+      - connectivity_detection
+      - network_callbacks
+      - offline_mode_support
+      - network_monitoring
+
+  # Güvenlik
+  - name: network_security
+    description: Network iletişiminde güvenlik implementasyonu
+    subcapabilities:
+      - ssl_tls_configuration
+      - certificate_pinning
+      - token_management
+      - bearer_authentication
+      - encrypted_storage
+
+  # Testing
+  - name: network_testing
+    description: API ve network katmanı için test yazma
+    subcapabilities:
+      - mockwebserver_usage
+      - mock_responses
+      - error_scenarios
+      - integration_tests
+
+topics:
+  - REST APIs Temelleri
+  - JSON Processing
+  - OkHttp HTTP Client
+  - Retrofit Framework
+  - Ağ Bağlantı Yönetimi
+  - Network Security
+  - Error Handling & Retry
+  - Pagination & Data Flow
+  - File Operations
+  - Network Testing
+
+learning_path:
+  - phase: Fundamentals
+    duration_hours: 20
+    goals:
+      - REST API temellerini anlamak
+      - JSON işlemeyi öğrenmek
+      - OkHttp basit kullanımını öğrenmek
+      - Retrofit kurulumunu yapabilmek
+
+  - phase: Intermediate
+    duration_hours: 30
+    goals:
+      - Interceptor'lar yazabilmek
+      - Hata yönetimi implementasyonu
+      - Network state management
+      - Token management
+      - Pagination implementasyonu
+
+  - phase: Advanced
+    duration_hours: 25
+    goals:
+      - SSL/TLS security implementasyonu
+      - Certificate pinning
+      - Custom call adapters
+      - Advanced caching strategies
+      - Comprehensive testing
+
+dependencies:
+  - retrofit: "2.10.0"
+  - okhttp: "4.11.0"
+  - gson: "2.10.1"
+  - moshi: "1.15.0"
+  - kotlinx-coroutines: "1.7.3"
+  - androidx-security-crypto: "1.1.0"
+
+tools_provided:
+  - MockWebServer: API testing
+  - Retrofit Debugger: Network debugging
+  - OkHttp Interceptors: Request/response modification
+  - JSON Validators: Data validation
+
+real_world_applications:
+  - Weather applications
+  - Social media feeds
+  - E-commerce platforms
+  - Chat applications
+  - File sharing services
+  - Location-based services
+  - Real-time notifications
+
+common_pitfalls:
+  - Main thread'de network işlemleri
+  - Yanlış timeout ayarları
+  - Token refresh logic'i
+  - Memory leaks
+  - SSL/TLS configuration hatası
+  - Interceptor exception handling
+  - Mock data production'da kalması
+
+resources:
+  documentation:
+    - https://square.github.io/retrofit/
+    - https://square.github.io/okhttp/
+    - https://developer.android.com/training/connect-devices-wirelessly
+
+  tools:
+    - Postman: API testing
+    - Android Studio Network Profiler
+    - JSON Formatter
+
+  courses:
+    - Retrofit fundamentals
+    - OkHttp deep dive
+    - Android networking patterns
+
+assessment_criteria:
+  - Retrofit API interfaces doğru yazabilmek
+  - OkHttp interceptor'ları implement edebilmek
+  - JSON veri işlemesini yapabilmek
+  - Error handling ve retry logic yazabilmek
+  - Network security uygulamalarını implement edebilmek
+  - Uygun unit testler yazabilmek
+
+certification_path:
+  - Basic Networking Fundamentals
+  - API Integration Specialist
+  - Advanced Network Architecture
+  - Android Networking Expert
+
+success_metrics:
+  - API integration hataları < %5
+  - Network response time < 2s
+  - 95%+ test coverage
+  - Production'da 0 memory leaks
+  - SSL/TLS fully implemented
