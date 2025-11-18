@@ -1,438 +1,337 @@
-# Android Development Plugin for Claude Code
+# custom-plugin-android
 
-🚀 **Professional-grade Android development learning and reference plugin for Claude Code**
-
-A comprehensive plugin providing structured learning paths, expert agents, and hands-on projects for mastering Android development from beginner to expert level.
+Professional Android development plugin for Claude Code. Complete reference and guidance for building production-grade Android applications.
 
 ## Features
 
-### 📚 7 Specialized Agents
+### 4 Specialized Agents
+- **Kotlin Essentials** - Master modern Kotlin programming
+- **Android Core** - Platform fundamentals and lifecycle
+- **Jetpack Modern** - Modern Android development libraries
+- **Architecture SOLID** - MVVM, Clean Architecture, design patterns
 
-1. **Kotlin Fundamentals** - Master modern Kotlin programming
-2. **Android Basics** - Learn platform fundamentals and lifecycle
-3. **Jetpack Suite** - Modern Android libraries and architecture
-4. **Architecture Patterns** - MVVM, Clean Architecture, design patterns
-5. **Testing & Quality** - Comprehensive testing strategies
-6. **Performance Optimization** - Memory, battery, and rendering optimization
-7. **Security & Deployment** - Secure development and Play Store deployment
+### 3 Interactive Commands
+- `/dev-guide` - Complete development best practices
+- `/code-examples` - Production-ready code patterns
+- `/quick-help` - Fast reference for common tasks
 
-### 🎯 4 Interactive Slash Commands
-
-- `/learn` - Guided learning paths (beginner → intermediate → advanced)
-- `/browse-agent` - Explore all agents and their capabilities
-- `/assess` - Knowledge assessment questionnaire (100 questions)
-- `/projects` - 50+ hands-on projects by difficulty level
-
-### 💾 7 Invokable Skills
-
-- **kotlin-programming** - Kotlin syntax and features
-- **jetpack-libraries** - Jetpack ecosystem guide
-- **app-architecture** - Architectural patterns guide
-- **android-testing** - Testing strategies guide
-- **performance-tuning** - Performance optimization guide
-- **app-security** - Security best practices guide
-- **app-deployment** - Deployment and release guide
-
-### 🎓 Learning Paths
-
-**Beginner Track (150 hours)**
-- Kotlin fundamentals
-- Android basics
-- Jetpack essentials
-- First complete app
-
-**Intermediate Track (200 hours)**
-- Advanced Kotlin
-- Advanced Android
-- Architecture & design
-- Jetpack advanced
-- Testing strategies
-- Integration projects
-
-**Advanced Track (200+ hours)**
-- Performance mastery
-- Security expertise
-- Advanced architecture
-- Deployment & CI/CD
-- Specializations
-- Capstone projects
-
-### 📋 50+ Hands-On Projects
-
-| Level | Projects | Duration |
-|-------|----------|----------|
-| Beginner | 10 projects | 2-7 hours each |
-| Intermediate | 15 projects | 15-35 hours each |
-| Advanced | 15 projects | 35-80 hours each |
-| Expert | 10 projects | 60-140 hours each |
+### 4 Invokable Skills
+- **kotlin-core** - Kotlin syntax and coroutines
+- **jetpack-essential** - ViewModel, LiveData, Room, Navigation
+- **architecture-patterns** - MVVM, Repository, SOLID principles
+- **android-production** - Testing, performance, security, deployment
 
 ## Quick Start
 
 ### Installation
 
-#### Option 1: Local Directory
 ```bash
-# Clone the repository
-git clone https://github.com/pluginagentmarketplace/custom-plugin-android.git
-
-# Load in Claude Code
-# File → Load Plugin → custom-plugin-android (choose directory)
-```
-
-#### Option 2: Add from Marketplace
-```bash
-# In Claude Code
-Plugin Marketplace → Search "Android Development" → Add Plugin
+# Load from directory in Claude Code
+File → Load Plugin → custom-plugin-android
 ```
 
 ### First Steps
 
-1. **Learn about your skill level:**
+1. **Get oriented:**
    ```
-   /assess
-   ```
-
-2. **Choose a learning path:**
-   ```
-   /learn
+   /dev-guide
    ```
 
-3. **Explore available agents:**
+2. **See code examples:**
    ```
-   /browse-agent
+   /code-examples
    ```
 
-4. **Find projects to build:**
+3. **Quick help on specific topic:**
    ```
-   /projects
+   /quick-help
    ```
+
+## Learning Path
+
+### Beginner (100-150 hours)
+1. Kotlin Fundamentals (30-40h)
+2. Android Core (40-50h)
+3. First App Project (30-60h)
+
+### Intermediate (100-150 hours)
+1. Jetpack Modern (40-50h)
+2. Architecture Patterns (40-50h)
+3. Real-World App (20-50h)
+
+### Advanced (100-200+ hours)
+1. Production Quality (50-100h)
+2. Capstone Project (50-100+h)
+
+## Tech Stack
+
+**UI Layer:**
+- Activities/Fragments or Jetpack Compose
+- Navigation Component
+- Material Design 3
+
+**Architecture:**
+- MVVM with ViewModel
+- Repository pattern
+- Hilt for dependency injection
+
+**Data:**
+- Room database
+- Retrofit for APIs
+- DataStore for preferences
+
+**Testing:**
+- JUnit 4/5
+- Mockk for mocking
+- Espresso for UI tests
+
+**Production:**
+- Performance optimization
+- Security best practices
+- Play Store deployment
 
 ## Plugin Structure
 
 ```
 custom-plugin-android/
 ├── .claude-plugin/
-│   └── plugin.json                  # Plugin manifest
-│
-├── agents/                          # 7 Specialized agents
-│   ├── 01-kotlin-fundamentals.md
-│   ├── 02-android-basics.md
-│   ├── 03-jetpack-suite.md
-│   ├── 04-architecture-patterns.md
-│   ├── 05-testing-quality.md
-│   ├── 06-performance-optimization.md
-│   └── 07-security-deployment.md
-│
-├── commands/                        # 4 Slash commands
-│   ├── learn.md
-│   ├── browse-agent.md
-│   ├── assess.md
-│   └── projects.md
-│
-├── skills/                          # 7 Invokable skills
-│   ├── kotlin/SKILL.md
-│   ├── jetpack/SKILL.md
-│   ├── architecture/SKILL.md
-│   ├── testing/SKILL.md
-│   ├── performance/SKILL.md
-│   ├── security/SKILL.md
-│   └── deployment/SKILL.md
-│
-├── hooks/
-│   └── hooks.json                   # Automation hooks
-│
-├── README.md                        # This file
+│   └── plugin.json
+├── agents/
+│   ├── 01-kotlin-essentials.md
+│   ├── 02-android-core.md
+│   ├── 03-jetpack-modern.md
+│   └── 04-architecture-solid.md
+├── commands/
+│   ├── dev-guide.md
+│   ├── code-examples.md
+│   └── quick-help.md
+├── skills/
+│   ├── 01-kotlin-core/SKILL.md
+│   ├── 02-jetpack-essential/SKILL.md
+│   ├── 03-architecture-patterns/SKILL.md
+│   └── 04-android-production/SKILL.md
+├── README.md
 └── LICENSE
 ```
 
-## Command Reference
+## Agents
 
-### /learn
-Start your structured Android development journey.
+### Kotlin Essentials
+Master Kotlin programming language - essential foundation for Android development.
 
-**Usage:**
-```
-/learn                          # Show all learning paths
-/learn beginner                 # Beginner path details
-/learn intermediate             # Intermediate path details
-/learn advanced                 # Advanced path details
-```
-
-### /browse-agent
-Explore all 7 Android development agents.
-
-**Usage:**
-```
-/browse-agent                   # List all agents
-/browse-agent kotlin            # Kotlin agent details
-/browse-agent android           # Android Basics agent
-/browse-agent jetpack           # Jetpack Suite agent
-/browse-agent architecture      # Architecture agent
-/browse-agent testing           # Testing agent
-/browse-agent performance       # Performance agent
-/browse-agent security          # Security & Deployment agent
-```
-
-### /assess
-Evaluate your Android knowledge (100 questions).
-
-**Usage:**
-```
-/assess                         # Start assessment
-/assess results                 # View assessment results
-/assess report                  # Get detailed report
-```
-
-### /projects
-Find hands-on projects by difficulty and interest.
-
-**Usage:**
-```
-/projects                       # Show all projects
-/projects beginner              # Beginner projects
-/projects intermediate          # Intermediate projects
-/projects advanced              # Advanced projects
-/projects expert                # Expert projects
-```
-
-## Learning Content
-
-### Total Content
-
-- **1000+ hours** of learning material
-- **100+ code examples** across all topics
-- **7 specialized agents** covering different areas
-- **50+ real-world projects**
-- **100+ self-assessment questions**
-- **Comprehensive documentation**
-
-### Topics Covered
-
-#### Kotlin Programming
+**Topics:**
 - Syntax and language features
-- Object-oriented programming
-- Functional programming
 - Coroutines and async
 - Extension functions
-- Type system and generics
+- Functional programming
+- Null safety and type system
 
-#### Android Fundamentals
-- Activities and lifecycle
-- Fragments
+### Android Core
+Learn Android platform fundamentals including Activities, Fragments, lifecycle, and components.
+
+**Topics:**
+- Activity and Fragment lifecycle
 - Intent system
-- Layouts and views
 - Data persistence
-- Background tasks
-- Permissions
+- Services and background tasks
+- Permissions and security
 
-#### Modern Android (Jetpack)
+### Jetpack Modern
+Build with Google's recommended Jetpack libraries for modern Android development.
+
+**Topics:**
 - ViewModel and LiveData
 - Room database
 - Navigation Component
-- WorkManager
-- DataStore
 - Hilt dependency injection
-- Jetpack Compose
+- WorkManager and DataStore
 
-#### Architecture & Design
+### Architecture SOLID
+Design scalable and maintainable applications with proven architectural patterns.
+
+**Topics:**
 - MVVM architecture
-- Clean Architecture
+- Clean Architecture principles
 - Repository pattern
-- Dependency injection
-- Design patterns
-- Layer separation
-- Testable architecture
+- SOLID principles
+- Design patterns for Android
+- Testing and security
 
-#### Testing & Quality
+## Skills
+
+### kotlin-core
+Kotlin syntax, coroutines, scope functions, and functional programming patterns.
+
+### jetpack-essential
+ViewModel, LiveData, Room, Navigation, Hilt - essential Jetpack libraries.
+
+### architecture-patterns
+MVVM, Repository pattern, Dependency injection, and SOLID principles.
+
+### android-production
+Testing, performance optimization, security best practices, and Play Store deployment.
+
+## Commands
+
+### /dev-guide
+Complete development guide covering:
+- Learning paths (beginner → advanced)
+- Recommended tech stack
+- Project structure
+- Best practices
+- Development workflow
+- Tools and libraries
+- Success criteria
+
+### /code-examples
+Production-ready code examples for:
+- Complete MVVM pattern
+- Room database setup
+- Repository pattern implementation
+- Retrofit networking
+- Hilt dependency injection
 - Unit testing
-- Instrumentation testing
-- Mocking and stubbing
-- Test fixtures
-- UI testing with Espresso
-- Code coverage
-- Test best practices
-
-#### Performance Optimization
-- Memory management
-- Memory leak detection
-- Battery optimization
-- Rendering performance
-- App startup optimization
-- Profiling tools
-- Performance monitoring
-
-#### Security & Deployment
+- Navigation
+- WorkManager
 - Secure data storage
-- Encryption
-- Authentication
-- Authorization
-- Network security
-- Code signing
-- Play Store deployment
-- CI/CD pipelines
 
-## Using Skills
+### /quick-help
+Quick reference for:
+- Learning Android development
+- Building new apps
+- Specific Android tasks
+- Common errors
+- Performance optimization
+- Useful commands
+- Resources
 
-Skills are automatically invoked when relevant but can also be manually accessed:
+## Best Practices Summary
 
-```
-# Kotlin programming help
-claude help me with kotlin coroutines
-# → kotlin-programming skill invoked
+### Architecture
+✅ MVVM with ViewModel
+✅ Repository pattern for data
+✅ Dependency injection with Hilt
+✅ Clear separation of concerns
+✅ SOLID principles
 
-# Jetpack libraries reference
-I need to use Room database
-# → jetpack-libraries skill invoked
+### Code Quality
+✅ Follow clean code principles
+✅ Unit test critical logic
+✅ UI tests for critical flows
+✅ 80%+ test coverage goal
+✅ Lint and static analysis
 
-# Architecture guidance
-How should I structure my app?
-# → app-architecture skill invoked
+### Performance
+✅ No memory leaks
+✅ 60+ FPS rendering
+✅ Fast app startup (< 5s)
+✅ Efficient database queries
+✅ Proper coroutine scoping
 
-# Testing strategies
-I want to write better tests
-# → android-testing skill invoked
+### Security
+✅ No hardcoded secrets
+✅ HTTPS for all APIs
+✅ Encrypted sensitive data
+✅ Proper permission handling
+✅ Input validation
 
-# Performance optimization
-My app is using too much memory
-# → performance-tuning skill invoked
+## Development Workflow
 
-# Security implementation
-How do I encrypt sensitive data?
-# → app-security skill invoked
+1. **Plan** - Design architecture and data models
+2. **Setup** - Create project and configure dependencies
+3. **Implement** - Build features incrementally
+4. **Test** - Write tests while coding
+5. **Optimize** - Performance and memory profiling
+6. **Polish** - UI/UX refinement
+7. **Release** - Build, sign, and deploy
+8. **Monitor** - Track crashes and analytics
 
-# Deployment process
-How do I deploy to Google Play?
-# → app-deployment skill invoked
-```
+## Common Issues
 
-## Recommended Learning Order
+**"Can't create instance of ViewModel"**
+- Add @HiltViewModel annotation
+- Ensure constructor parameters are provided
 
-### For Complete Beginners
-1. Kotlin Fundamentals (30-40 hours)
-2. Android Basics (40-50 hours)
-3. Build simple projects (20-30 hours)
-4. Jetpack Suite (50-60 hours)
-5. Intermediate projects (40-50 hours)
+**"Memory leak detected"**
+- Unregister listeners in onDestroy()
+- Avoid holding Context references
+- Use WeakReference when needed
 
-### For Intermediate Developers
-1. Architecture Patterns (60-70 hours)
-2. Testing & Quality (50-60 hours)
-3. Advanced Jetpack (40-50 hours)
-4. Real-world projects (40-50 hours)
+**"ANR - Application Not Responding"**
+- Move heavy operations to background thread
+- Use coroutines properly
+- Profile with Android Profiler
 
-### For Advanced Developers
-1. Performance Optimization (50-60 hours)
-2. Security & Deployment (50-60 hours)
-3. Advanced projects (60-100+ hours)
-4. Specializations and expert projects
+**"Null pointer exception on view"**
+- Verify layout file has view with correct ID
+- Check view binding is initialized
+- Use safe navigation (?.)
 
-## Assessment Criteria
+## Essential Resources
 
-Each agent includes comprehensive assessment criteria to help you:
-- Evaluate your current skill level
-- Identify knowledge gaps
-- Track progress
-- Focus on weak areas
-- Prepare for professional development
+**Official Documentation:**
+- [Android Developer Docs](https://developer.android.com)
+- [Kotlin Official Docs](https://kotlinlang.org/docs/)
+- [Jetpack Architecture Guide](https://developer.android.com/jetpack/guide)
 
-## Project Showcase
-
-Build portfolio-ready projects:
-- Todo list app (20-30 hours)
-- E-commerce platform (50-70 hours)
-- Social network (40-60 hours)
-- News reader app (18-25 hours)
-- Real estate app (40-60 hours)
-- And 45+ more!
-
-## Best Practices Throughout
-
-The plugin emphasizes:
-- ✅ Clean code principles
-- ✅ SOLID principles
-- ✅ Design patterns
-- ✅ Test-driven development
-- ✅ Security best practices
-- ✅ Performance optimization
-- ✅ Professional workflows
-
-## Resources & References
-
-### Official Documentation
-- [Android Official Docs](https://developer.android.com)
-- [Kotlin Documentation](https://kotlinlang.org/docs/)
-- [Jetpack Architecture Guides](https://developer.android.com/jetpack/guide)
-
-### Learning Platforms
+**Training:**
 - [Google Codelabs](https://developer.android.com/codelabs)
 - [Android Developers Blog](https://android-developers.googleblog.com)
-- [Kotlin Playground](https://play.kotlinlang.org/)
 
-### Community
-- [r/androiddev](https://reddit.com/r/androiddev)
-- [Android Discord Community](https://discord.gg/android)
-- [Stack Overflow - Android Tag](https://stackoverflow.com/questions/tagged/android)
+**Tools:**
+- [Android Studio](https://developer.android.com/studio)
+- [Firebase Test Lab](https://firebase.google.com/docs/test-lab)
+- [Google Play Console](https://play.google.com/console)
 
-## Plugin Information
+## Release Checklist
 
-- **Version:** 1.0.0
-- **Last Updated:** November 2024
-- **Compatibility:** Claude Code
-- **Repository:** [GitHub](https://github.com/pluginagentmarketplace/custom-plugin-android)
-- **License:** MIT
+Before deploying to Google Play:
+
+- ✅ All tests passing
+- ✅ No crashes or leaks
+- ✅ 60+ FPS rendering
+- ✅ Security reviewed
+- ✅ Code obfuscated
+- ✅ Version code incremented
+- ✅ App signed correctly
+- ✅ Tested on multiple devices
+- ✅ Crash reporting configured
+- ✅ Analytics integrated
+
+## Success Metrics
+
+- App runs without crashes
+- 80%+ test coverage
+- No memory leaks
+- 60+ FPS performance
+- < 5 second cold start
+- Follows SOLID principles
+- Clear code structure
+- Proper error handling
+- Security reviewed
+- Published on Play Store
 
 ## Contributing
 
-Contributions are welcome! To improve this plugin:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make improvements
-4. Submit a pull request
-
-### Areas for Contribution
-- Additional projects
-- Expanded agent content
-- Code examples and snippets
-- Video tutorials links
-- External resource links
+Contributions are welcome! Areas for improvement:
+- Additional code examples
+- More detailed agents
+- Video tutorial links
 - Translations
-
-## Support & Feedback
-
-- **Issues:** [GitHub Issues](https://github.com/pluginagentmarketplace/custom-plugin-android/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/pluginagentmarketplace/custom-plugin-android/discussions)
-- **Feedback:** Use `/feedback` command in Claude Code
+- Additional resources
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See LICENSE file
 
-## Acknowledgments
+## About
 
-- Android team for excellent documentation
-- Jetpack team for modern libraries
-- Community for contributing examples
-- Claude Code for the plugin platform
+This plugin provides professional guidance for Android development using modern best practices, proven architectural patterns, and production-ready code examples.
 
----
-
-## Quick Tips
-
-1. **Start small:** Don't try to learn everything at once
-2. **Build projects:** Apply concepts with hands-on projects
-3. **Read documentation:** Official docs are comprehensive
-4. **Ask questions:** Use Claude Code to explore topics deeply
-5. **Practice daily:** Consistency beats marathon sessions
-6. **Join community:** Connect with other Android developers
-7. **Stay updated:** Follow Android releases and best practices
+Built for developers who want to write high-quality, maintainable Android applications.
 
 ---
 
-**Ready to master Android development?** 🚀
+**Ready to build professional Android apps?**
 
-Start with `/learn` or `/assess` right now!
-
----
-
-Made with ❤️ for Android developers everywhere.
+Start with `/dev-guide` or `/quick-help`!

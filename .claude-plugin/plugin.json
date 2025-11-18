@@ -1,116 +1,69 @@
 {
-  "name": "Android Development Roadmap",
+  "name": "custom-plugin-android",
   "version": "1.0.0",
-  "description": "Comprehensive Android development plugin with 7 specialized agents, skills, and learning paths",
+  "description": "Professional Android development guide with 4 core agents, skills, and best practices",
   "author": "Plugin Agent Marketplace",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
-  "keywords": [
-    "android",
-    "kotlin",
-    "mobile",
-    "jetpack",
-    "architecture",
-    "testing",
-    "performance",
-    "security"
-  ],
+  "keywords": ["android", "kotlin", "mobile", "development"],
   "agents": [
     {
-      "name": "kotlin-fundamentals",
-      "path": "agents/01-kotlin-fundamentals.md",
-      "description": "Kotlin programming language fundamentals for Android"
+      "name": "kotlin-essentials",
+      "path": "agents/01-kotlin-essentials.md",
+      "description": "Master Kotlin programming language for Android"
     },
     {
-      "name": "android-basics",
-      "path": "agents/02-android-basics.md",
-      "description": "Android platform fundamentals, activities, fragments, lifecycles"
+      "name": "android-core",
+      "path": "agents/02-android-core.md",
+      "description": "Android platform fundamentals and lifecycle"
     },
     {
-      "name": "jetpack-suite",
-      "path": "agents/03-jetpack-suite.md",
-      "description": "Android Jetpack libraries and modern development patterns"
+      "name": "jetpack-modern",
+      "path": "agents/03-jetpack-modern.md",
+      "description": "Modern Android development with Jetpack"
     },
     {
-      "name": "architecture-patterns",
-      "path": "agents/04-architecture-patterns.md",
-      "description": "MVVM, MVI, Clean Architecture, and design patterns for Android"
-    },
-    {
-      "name": "testing-quality",
-      "path": "agents/05-testing-quality.md",
-      "description": "Unit testing, instrumentation testing, and quality assurance"
-    },
-    {
-      "name": "performance-optimization",
-      "path": "agents/06-performance-optimization.md",
-      "description": "Memory optimization, battery efficiency, and performance monitoring"
-    },
-    {
-      "name": "security-deployment",
-      "path": "agents/07-security-deployment.md",
-      "description": "Security best practices, authentication, and app deployment"
+      "name": "architecture-solid",
+      "path": "agents/04-architecture-solid.md",
+      "description": "MVVM, Clean Architecture, and design patterns"
     }
   ],
   "commands": [
     {
-      "name": "learn",
-      "path": "commands/learn.md",
-      "description": "Start Android learning path with guided progression"
+      "name": "dev-guide",
+      "path": "commands/dev-guide.md",
+      "description": "Android development best practices guide"
     },
     {
-      "name": "browse-agent",
-      "path": "commands/browse-agent.md",
-      "description": "Explore all 7 Android development agents"
+      "name": "code-examples",
+      "path": "commands/code-examples.md",
+      "description": "Real-world code examples and patterns"
     },
     {
-      "name": "assess",
-      "path": "commands/assess.md",
-      "description": "Evaluate Android development knowledge and skills"
-    },
-    {
-      "name": "projects",
-      "path": "commands/projects.md",
-      "description": "Discover 50+ hands-on Android projects"
+      "name": "quick-help",
+      "path": "commands/quick-help.md",
+      "description": "Quick help for common Android tasks"
     }
   ],
   "skills": [
     {
-      "name": "kotlin-programming",
-      "path": "skills/kotlin/SKILL.md",
-      "description": "Kotlin language features, syntax, and best practices"
+      "name": "kotlin-core",
+      "path": "skills/01-kotlin-core/SKILL.md",
+      "description": "Kotlin syntax, coroutines, and idioms"
     },
     {
-      "name": "jetpack-libraries",
-      "path": "skills/jetpack/SKILL.md",
-      "description": "Android Jetpack ecosystem: Room, LiveData, Navigation, etc."
+      "name": "jetpack-essential",
+      "path": "skills/02-jetpack-essential/SKILL.md",
+      "description": "ViewModel, LiveData, Room, Navigation"
     },
     {
-      "name": "app-architecture",
-      "path": "skills/architecture/SKILL.md",
-      "description": "Architectural patterns for scalable Android apps"
+      "name": "architecture-patterns",
+      "path": "skills/03-architecture-patterns/SKILL.md",
+      "description": "MVVM, Repository pattern, Dependency injection"
     },
     {
-      "name": "android-testing",
-      "path": "skills/testing/SKILL.md",
-      "description": "Unit tests, integration tests, and test automation"
-    },
-    {
-      "name": "performance-tuning",
-      "path": "skills/performance/SKILL.md",
-      "description": "Memory, battery, and runtime performance optimization"
-    },
-    {
-      "name": "app-security",
-      "path": "skills/security/SKILL.md",
-      "description": "Authentication, encryption, and secure data handling"
-    },
-    {
-      "name": "app-deployment",
-      "path": "skills/deployment/SKILL.md",
-      "description": "Build processes, Play Store deployment, and CI/CD"
+      "name": "android-production",
+      "path": "skills/04-android-production/SKILL.md",
+      "description": "Testing, performance, security, deployment"
     }
-  ],
-  "hooks": {
-    "path": "hooks/hooks.json"
-  }
+  ]
 }
