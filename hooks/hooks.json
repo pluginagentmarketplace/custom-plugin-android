@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "hooks": [
+    {
+      "id": "agent-navigation",
+      "event": "user-command-submitted",
+      "description": "Auto-navigate between agents based on learning progression",
+      "conditions": {
+        "commands": ["roadmap", "agent-guide", "quick-start"]
+      },
+      "actions": [
+        {
+          "type": "suggest-next-agent",
+          "priority": "high",
+          "message": "Based on your progress, explore related agents"
+        }
+      ]
+    },
+    {
+      "id": "skill-auto-invoke",
+      "event": "user-message-submitted",
+      "description": "Automatically trigger relevant skills based on keywords",
+      "keywords": [
+        {
+          "pattern": "kotlin|coroutine|null safety|extension|scope function",
+          "skill": "kotlin-fundamentals",
+          "context": "User asking about Kotlin"
+        },
+        {
+          "pattern": "activity|fragment|lifecycle|service|intent|permission",
+          "skill": "android-platform",
+          "context": "User asking about Android platform"
+        },
+        {
+          "pattern": "layout|constraint|compose|material|ui design",
+          "skill": "ui-design",
+          "context": "User asking about UI development"
+        },
+        {
+          "pattern": "room|sqlite|database|storage|datastore|encrypt",
+          "skill": "data-persistence",
+          "context": "User asking about data management"
+        },
+        {
+          "pattern": "retrofit|api|http|network|json|rest",
+          "skill": "api-integration",
+          "context": "User asking about networking"
+        },
+        {
+          "pattern": "mvvm|clean architecture|repository|solid|design pattern",
+          "skill": "app-architecture",
+          "context": "User asking about architecture"
+        },
+        {
+          "pattern": "test|testing|performance|security|deploy|production|play store",
+          "skill": "production-quality",
+          "context": "User asking about testing/security/deployment"
+        }
+      ],
+      "actions": [
+        {
+          "type": "invoke-skill",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "learning-path-tracking",
+      "event": "user-message-submitted",
+      "description": "Track user's learning progress through the 7-step path",
+      "actions": [
+        {
+          "type": "track-milestone",
+          "milestones": [
+            "fundamentals-completed",
+            "platform-completed",
+            "ui-completed",
+            "data-completed",
+            "networking-completed",
+            "architecture-completed",
+            "production-completed"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "code-example-reference",
+      "event": "user-requests-code",
+      "description": "Provide relevant code examples based on current agent",
+      "patterns": [
+        "show me code",
+        "code example",
+        "how do i",
+        "can you show",
+        "example of"
+      ],
+      "actions": [
+        {
+          "type": "provide-context-aware-example",
+          "format": "kotlin",
+          "include": ["best-practices", "error-handling", "testing"]
+        }
+      ]
+    },
+    {
+      "id": "prerequisite-check",
+      "event": "agent-accessed",
+      "description": "Remind user of prerequisites for current agent",
+      "agents": {
+        "platform": {
+          "prerequisites": ["fundamentals"],
+          "message": "Ensure you've mastered Kotlin fundamentals first"
+        },
+        "ui-development": {
+          "prerequisites": ["fundamentals", "platform"],
+          "message": "You should understand Android core components before UI development"
+        },
+        "data-management": {
+          "prerequisites": ["fundamentals"],
+          "message": "Kotlin knowledge required for efficient data management"
+        },
+        "networking": {
+          "prerequisites": ["fundamentals", "data-management"],
+          "message": "Data handling knowledge helpful for API responses"
+        },
+        "architecture": {
+          "prerequisites": ["fundamentals", "platform", "ui-development"],
+          "message": "Master Android basics before advanced architecture"
+        },
+        "production": {
+          "prerequisites": ["fundamentals", "architecture"],
+          "message": "Architecture understanding needed for production best practices"
+        }
+      },
+      "actions": [
+        {
+          "type": "show-prerequisite-warning",
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "id": "resource-linking",
+      "event": "user-requests-help",
+      "description": "Link to official resources and documentation",
+      "resources": {
+        "kotlin-fundamentals": [
+          "https://kotlinlang.org/docs/",
+          "https://kotlinlang.org/docs/coroutines-overview.html",
+          "https://kt.academy/"
+        ],
+        "android-platform": [
+          "https://developer.android.com/guide/components/activities",
+          "https://developer.android.com/guide/fragments",
+          "https://developer.android.com/guide/components/services"
+        ],
+        "ui-design": [
+          "https://developer.android.com/training/constraint-layout",
+          "https://developer.android.com/develop/ui/compose",
+          "https://m3.material.io/"
+        ],
+        "data-persistence": [
+          "https://developer.android.com/training/data-storage/room",
+          "https://developer.android.com/topic/libraries/architecture/datastore"
+        ],
+        "api-integration": [
+          "https://square.github.io/retrofit/",
+          "https://square.github.io/okhttp/"
+        ],
+        "app-architecture": [
+          "https://developer.android.com/jetpack/guide",
+          "https://developer.android.com/training/dependency-injection/hilt-android"
+        ],
+        "production-quality": [
+          "https://developer.android.com/training/testing",
+          "https://developer.android.com/topic/performance",
+          "https://developer.android.com/privacy-and-security",
+          "https://support.google.com/googleplay"
+        ]
+      },
+      "actions": [
+        {
+          "type": "provide-resource-links",
+          "priority": "high"
+        }
+      ]
+    },
+    {
+      "id": "progression-reminder",
+      "event": "user-completes-agent",
+      "description": "Encourage progression to next agent",
+      "actions": [
+        {
+          "type": "congratulate-milestone",
+          "message": "Great progress! Ready for the next step?"
+        },
+        {
+          "type": "suggest-next-agent",
+          "based_on": "learning-path"
+        }
+      ]
+    },
+    {
+      "id": "best-practices-enforcement",
+      "event": "user-writes-code",
+      "description": "Remind about best practices relevant to current context",
+      "best_practices": {
+        "kotlin": [
+          "Use val by default",
+          "Handle nullability properly",
+          "Apply SOLID principles",
+          "Use scope functions effectively"
+        ],
+        "android": [
+          "Respect lifecycle callbacks",
+          "Unregister listeners properly",
+          "Use ViewModel for state",
+          "Prevent memory leaks"
+        ],
+        "ui": [
+          "Use ConstraintLayout or Compose",
+          "Test on multiple screen sizes",
+          "Support accessibility",
+          "Follow Material Design"
+        ],
+        "data": [
+          "Use Room for complex data",
+          "Encrypt sensitive information",
+          "Implement proper migrations",
+          "Test database operations"
+        ],
+        "networking": [
+          "Always use HTTPS",
+          "Implement SSL pinning",
+          "Handle errors gracefully",
+          "Validate API responses"
+        ],
+        "architecture": [
+          "Follow SOLID principles",
+          "Use dependency injection",
+          "Maintain clear separation",
+          "Test independently"
+        ],
+        "production": [
+          "Write comprehensive tests",
+          "Profile performance",
+          "Implement security features",
+          "Monitor production apps"
+        ]
+      },
+      "actions": [
+        {
+          "type": "show-best-practice-tip",
+          "priority": "medium",
+          "frequency": "occasional"
+        }
+      ]
+    }
+  ]
+}

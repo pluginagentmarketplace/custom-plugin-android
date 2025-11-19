@@ -1,0 +1,163 @@
+{
+  "title": "Mobile Development Fundamentals",
+  "description": "Mobil uygulama geliştirmenin temelini oluşturan programlama konseptleri, dil bilgisi ve nesne yönelimli programlama prensipleri. Kotlin ve Java programlama dillerinin derinlemesine incelenmesi, OOP prensipleri, SOLID tasarım prensipleri, veri yapıları, fonksiyonel programlama ve memory management konularını kapsar.",
+  "capabilities": [
+    "Kotlin programlama dili temel ve ileri özelliklerini kullanma",
+    "Java programlama dilinin temel konseptlerini uygulama",
+    "Nesne yönelimli programlama (OOP) prensiplerini implementasyon",
+    "Encapsulation, Inheritance, Polymorphism, Abstraction kavramlarını uygulama",
+    "SOLID prensiplerini kodda pratikleştirme",
+    "Veri yapılarını (Arrays, Lists, Maps, Sets) etkin kullanma",
+    "Fonksiyonel programlama paradigmalarını uygulama",
+    "Higher-order functions ve lambda expressions kullanma",
+    "Exception handling ve error management best practices",
+    "Memory management ve garbage collection anlama",
+    "Kotlin coroutines ve asenkron programlama temelleri",
+    "Collections API ve stream işlemleri"
+  ],
+  "main_topics": [
+    {
+      "topic": "Kotlin Programlama Dili",
+      "subtopics": [
+        "Null Safety ve Optional Handling",
+        "Extension Functions",
+        "Data Classes ve Sealed Classes",
+        "Coroutines ve Asenkron Programlama",
+        "Higher-Order Functions ve Lambda",
+        "Scope Functions (apply, also, let, run)",
+        "Collection Operations (map, filter, reduce)",
+        "Destructuring"
+      ],
+      "learning_hours": 30
+    },
+    {
+      "topic": "Java Fundamentals",
+      "subtopics": [
+        "Temel Sözdizimi ve Operatörler",
+        "Kontrol Akışı (if, switch, loops)",
+        "Fonksiyonlar ve Metodlar",
+        "Generics ve Type Parameters",
+        "Collections Framework",
+        "Streams API",
+        "Lambda Expressions (Java 8+)",
+        "Exception Handling Mekanizmi"
+      ],
+      "learning_hours": 25
+    },
+    {
+      "topic": "Nesne Yönelimli Programlama (OOP)",
+      "subtopics": [
+        "Sınıf ve Nesne Konsepti",
+        "Encapsulation (Kapsülleme)",
+        "Inheritance (Kalıtım)",
+        "Polymorphism (Çok Biçimlilik)",
+        "Abstraction (Soyutlama)",
+        "Interface vs Abstract Class",
+        "Method Overloading ve Overriding",
+        "Access Modifiers (public, private, protected, internal)"
+      ],
+      "learning_hours": 25
+    },
+    {
+      "topic": "SOLID Prensipleri",
+      "subtopics": [
+        "Single Responsibility Principle (SRP)",
+        "Open/Closed Principle (OCP)",
+        "Liskov Substitution Principle (LSP)",
+        "Interface Segregation Principle (ISP)",
+        "Dependency Inversion Principle (DIP)",
+        "Dependency Injection Pattern",
+        "Design Patterns (Singleton, Factory, Observer)"
+      ],
+      "learning_hours": 20
+    },
+    {
+      "topic": "Veri Yapıları ve Algoritmalar",
+      "subtopics": [
+        "Arrays (Diziler)",
+        "Lists (Listeler)",
+        "Maps (Haritalar)",
+        "Sets (Kümeler)",
+        "Queues ve Stacks",
+        "Tree Structures",
+        "Graph Basics",
+        "Time and Space Complexity",
+        "Sorting Algorithms",
+        "Search Algorithms"
+      ],
+      "learning_hours": 30
+    },
+    {
+      "topic": "Fonksiyonel Programlama",
+      "subtopics": [
+        "Pure Functions",
+        "First-Class Functions",
+        "Higher-Order Functions",
+        "Function Composition",
+        "Immutability",
+        "Recursion",
+        "Lazy Evaluation",
+        "Monads and Functors Basics"
+      ],
+      "learning_hours": 15
+    },
+    {
+      "topic": "Exception Handling ve Error Management",
+      "subtopics": [
+        "Try-Catch-Finally Mekanizması",
+        "Custom Exceptions",
+        "Exception Propagation",
+        "Error Handling Patterns",
+        "Result Type ve Either Pattern",
+        "Logging Best Practices",
+        "Debugging Techniques"
+      ],
+      "learning_hours": 12
+    },
+    {
+      "topic": "Memory Management",
+      "subtopics": [
+        "Garbage Collection Mekanizması",
+        "Memory Leaks Türleri",
+        "Weak ve Soft References",
+        "Context Leaks Önleme",
+        "Proper Resource Management",
+        "LeakCanary Kullanımı",
+        "Profiling Tools"
+      ],
+      "learning_hours": 15
+    }
+  ],
+  "learning_hours": {
+    "total": 172,
+    "breakdown": {
+      "Kotlin_Programlama_Dili": 30,
+      "Java_Fundamentals": 25,
+      "Nesne_Yönelimli_Programlama": 25,
+      "SOLID_Prensipleri": 20,
+      "Veri_Yapıları_ve_Algoritmalar": 30,
+      "Fonksiyonel_Programlama": 15,
+      "Exception_Handling": 12,
+      "Memory_Management": 15
+    }
+  },
+  "prerequisites": [
+    "Temel bilgisayar bilimi anlayışı",
+    "Programlamaya giriş bilgisi (opsiyonel)",
+    "Mantıksal düşünme yeteneği"
+  ],
+  "difficulty_level": "Intermediate",
+  "estimated_duration": "4-6 weeks (part-time)",
+  "last_updated": "2025-11-18",
+  "version": "1.0.0",
+  "tags": [
+    "mobile-development",
+    "android",
+    "kotlin",
+    "java",
+    "oop",
+    "programming-fundamentals",
+    "design-patterns",
+    "data-structures"
+  ]
+}

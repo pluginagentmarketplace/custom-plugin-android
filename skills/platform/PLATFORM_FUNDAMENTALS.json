@@ -1,0 +1,288 @@
+{
+  "title": "Android Fundamentals - Platform Core Components",
+  "description": "Master Android platform core components including Activities, Fragments, Lifecycle management, Services, Intent system, BroadcastReceivers, ContentProviders, and component communication. This comprehensive guide covers lifecycle-aware components, state management, process death recovery, and modern Android best practices with AndroidX libraries.",
+  "capabilities": [
+    "Activity lifecycle management and stack management",
+    "Fragment lifecycle and transactions",
+    "Service creation and lifecycle (foreground, background, bound)",
+    "Intent system (explicit, implicit, intent filters)",
+    "BroadcastReceiver and local broadcasts",
+    "ContentProvider and data access patterns",
+    "Lifecycle-aware components with modern AndroidX",
+    "State management across configuration changes",
+    "Process death recovery and state persistence",
+    "Permission handling and runtime permissions",
+    "Fragment communication patterns",
+    "Deep linking and navigation",
+    "Data passing between components",
+    "Background work management"
+  ],
+  "main_topics": [
+    {
+      "name": "Activities",
+      "subtopics": [
+        "Activity lifecycle (onCreate, onStart, onResume, onPause, onStop, onDestroy)",
+        "Task and back stack management",
+        "Activity states and visibility",
+        "Configuration changes and rotation handling",
+        "State preservation with savedInstanceState",
+        "Process death and recovery",
+        "Activity launching modes"
+      ],
+      "learning_hours": 12
+    },
+    {
+      "name": "Fragments",
+      "subtopics": [
+        "Fragment basics and purpose",
+        "Fragment lifecycle (onAttach, onCreate, onCreateView, onViewCreated, onStart, onResume, onPause, onStop, onDestroyView, onDestroy, onDetach)",
+        "Fragment transactions and back stack",
+        "Fragment arguments and data passing",
+        "Fragment communication (parent-child, sibling)",
+        "Nested fragments",
+        "Fragment state preservation",
+        "ViewBinding in fragments"
+      ],
+      "learning_hours": 12
+    },
+    {
+      "name": "Lifecycle Management & Modern Approaches",
+      "subtopics": [
+        "Lifecycle-aware components (AndroidX)",
+        "lifecycleScope and coroutines",
+        "flowWithLifecycle for reactive streams",
+        "Lifecycle observers",
+        "SavedStateHandle for ViewModel",
+        "ViewModel for state persistence",
+        "Handling configuration changes",
+        "Process death recovery patterns"
+      ],
+      "learning_hours": 6
+    },
+    {
+      "name": "Services",
+      "subtopics": [
+        "Service lifecycle",
+        "Started services (unbound)",
+        "Bound services and IPC",
+        "Foreground services with notifications",
+        "Service vs Thread vs Coroutine",
+        "Intent service",
+        "Job scheduling",
+        "Service in background processes"
+      ],
+      "learning_hours": 8
+    },
+    {
+      "name": "Intent System",
+      "subtopics": [
+        "Explicit intents for direct navigation",
+        "Implicit intents for system apps",
+        "Intent filters in manifest",
+        "Data passing with putExtra",
+        "Activity result handling",
+        "Deep linking and app links",
+        "Intent actions and categories",
+        "URI schemes and data"
+      ],
+      "learning_hours": 6
+    },
+    {
+      "name": "BroadcastReceiver & Messaging",
+      "subtopics": [
+        "BroadcastReceiver basics",
+        "System broadcasts",
+        "Local broadcasts",
+        "Broadcast registration (manifest vs dynamic)",
+        "Ordered broadcasts",
+        "Sticky broadcasts",
+        "Broadcast permissions",
+        "Listening to system events"
+      ],
+      "learning_hours": 5
+    },
+    {
+      "name": "ContentProvider & Data Sharing",
+      "subtopics": [
+        "ContentProvider basics",
+        "Query, insert, update, delete operations",
+        "Content URIs and authorities",
+        "Cursor usage and management",
+        "ContentResolver",
+        "ContentObserver for notifications",
+        "Security and permissions",
+        "Building custom ContentProviders"
+      ],
+      "learning_hours": 5
+    },
+    {
+      "name": "Manifest & Permissions",
+      "subtopics": [
+        "Android manifest structure",
+        "Component declarations",
+        "Intent filters",
+        "Permissions (normal vs dangerous)",
+        "Runtime permissions (API 23+)",
+        "Permission groups",
+        "Uses-feature declarations",
+        "Application metadata"
+      ],
+      "learning_hours": 4
+    },
+    {
+      "name": "Advanced Topics",
+      "subtopics": [
+        "Process death and recovery",
+        "State restoration patterns",
+        "Configuration changes handling",
+        "Multi-window support",
+        "Picture-in-Picture",
+        "Lifecycle-aware Services",
+        "Testing components",
+        "Debugging with Android Studio"
+      ],
+      "learning_hours": 8
+    },
+    {
+      "name": "Practical Implementation",
+      "subtopics": [
+        "Building sample applications",
+        "Handling edge cases",
+        "Performance optimization",
+        "Memory leak prevention",
+        "Common pitfalls and solutions",
+        "Testing lifecycle scenarios",
+        "Integration with modern libraries",
+        "Best practices and patterns"
+      ],
+      "learning_hours": 12
+    }
+  ],
+  "learning_hours": {
+    "activities": 12,
+    "fragments": 12,
+    "lifecycle_management": 6,
+    "services": 8,
+    "intent_system": 6,
+    "broadcast_and_messaging": 5,
+    "content_provider": 5,
+    "manifest_permissions": 4,
+    "advanced_topics": 8,
+    "practical_implementation": 12,
+    "total": 78,
+    "estimated_weeks": "10-12 weeks (8 hours/week)"
+  },
+  "prerequisites": [
+    "Kotlin fundamentals (variables, functions, classes)",
+    "Object-oriented programming concepts",
+    "Android Studio familiarity",
+    "Android project structure knowledge",
+    "Basic XML understanding for layouts"
+  ],
+  "learning_path": [
+    {
+      "phase": 1,
+      "name": "Foundation",
+      "topics": ["Activities & Lifecycle", "Fragments & Lifecycle"],
+      "duration": "3-4 weeks"
+    },
+    {
+      "phase": 2,
+      "name": "Core Components",
+      "topics": ["Intent System", "Services", "BroadcastReceiver"],
+      "duration": "2-3 weeks"
+    },
+    {
+      "phase": 3,
+      "name": "Data Management",
+      "topics": ["ContentProvider", "Manifest & Permissions"],
+      "duration": "1-2 weeks"
+    },
+    {
+      "phase": 4,
+      "name": "Modern Approaches",
+      "topics": ["Lifecycle-Aware Components", "Advanced Topics"],
+      "duration": "2-3 weeks"
+    },
+    {
+      "phase": 5,
+      "name": "Mastery",
+      "topics": ["Practical Implementation", "Real-world Applications"],
+      "duration": "2-3 weeks"
+    }
+  ],
+  "key_concepts": [
+    "Lifecycle awareness and proper resource management",
+    "State preservation and recovery",
+    "Component communication patterns",
+    "Task and back stack understanding",
+    "Intent system and navigation",
+    "Background work management",
+    "Process death handling",
+    "Configuration change handling",
+    "Lifecycle-aware architectural patterns",
+    "Memory leak prevention"
+  ],
+  "common_mistakes": [
+    "Not unregistering listeners and observers",
+    "Holding Activity references in singletons",
+    "Ignoring configuration changes",
+    "Running background operations on main thread",
+    "Not handling permissions properly",
+    "Memory leaks from retained fragments",
+    "Improper state management across lifecycle",
+    "Not cleaning up resources in onDestroy",
+    "Blocking main thread in lifecycle callbacks",
+    "Improper Fragment transaction handling"
+  ],
+  "tools_and_resources": [
+    {
+      "name": "Official Android Documentation",
+      "url": "https://developer.android.com/guide/components",
+      "type": "Documentation"
+    },
+    {
+      "name": "Android Lifecycle Guide",
+      "url": "https://developer.android.com/guide/components/activities/activity-lifecycle",
+      "type": "Documentation"
+    },
+    {
+      "name": "Fragment Documentation",
+      "url": "https://developer.android.com/guide/fragments",
+      "type": "Documentation"
+    },
+    {
+      "name": "Android Studio Debugger",
+      "type": "Tool"
+    },
+    {
+      "name": "Logcat for lifecycle logging",
+      "type": "Tool"
+    },
+    {
+      "name": "Espresso for testing components",
+      "type": "Testing Framework"
+    }
+  ],
+  "difficulty_level": "Intermediate",
+  "target_audience": [
+    "Android developers transitioning from beginner to intermediate level",
+    "Developers learning Android platform fundamentals",
+    "Interview preparation for Android positions",
+    "Team training on core Android concepts"
+  ],
+  "outcomes": [
+    "Understand and implement Activity lifecycle correctly",
+    "Master Fragment lifecycle and transactions",
+    "Implement proper state management across component lifecycle",
+    "Use Intent system for component communication",
+    "Create and manage Services for background work",
+    "Handle configuration changes and process death",
+    "Implement BroadcastReceiver and local messaging",
+    "Work with ContentProvider for data sharing",
+    "Use lifecycle-aware components from AndroidX",
+    "Apply best practices and avoid common pitfalls",
+    "Build robust, production-ready Android applications",
+    "Debug and optimize lifecycle-related issues"
+  ]
+}
