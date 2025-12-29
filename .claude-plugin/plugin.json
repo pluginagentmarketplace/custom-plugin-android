@@ -23,27 +23,39 @@
     "plugin"
   ],
   "agents": [
-    "./agents/01-fundamentals.md",
+    "./agents/01-android-fundamentals.md",
+    "./agents/01-kotlin-essentials.md",
+    "./agents/02-android-architecture.md",
     "./agents/02-platform.md",
+    "./agents/03-jetpack-modern.md",
     "./agents/03-ui-development.md",
+    "./agents/04-architecture-solid.md",
     "./agents/04-data-management.md",
     "./agents/05-networking.md",
     "./agents/06-architecture.md",
-    "./agents/07-production.md"
+    "./agents/07-production.md",
+    "./agents/data-management-storage.md"
   ],
   "skills": [
-    "./skills/fundamentals/SKILL.md",
-    "./skills/platform/SKILL.md",
-    "./skills/ui/SKILL.md",
-    "./skills/data/SKILL.md",
-    "./skills/networking/SKILL.md",
+    "./skills/01-kotlin-core/SKILL.md",
+    "./skills/02-jetpack-essential/SKILL.md",
+    "./skills/03-architecture-patterns/SKILL.md",
+    "./skills/04-android-production/SKILL.md",
     "./skills/architecture/SKILL.md",
-    "./skills/production/SKILL.md"
+    "./skills/data/SKILL.md",
+    "./skills/fundamentals/SKILL.md",
+    "./skills/networking/SKILL.md",
+    "./skills/platform/SKILL.md",
+    "./skills/production/SKILL.md",
+    "./skills/ui/SKILL.md"
   ],
   "commands": [
-    "./commands/roadmap.md",
     "./commands/agent-guide.md",
-    "./commands/quick-start.md"
+    "./commands/code-examples.md",
+    "./commands/dev-guide.md",
+    "./commands/quick-help.md",
+    "./commands/quick-start.md",
+    "./commands/roadmap.md"
   ],
   "hooks": "./hooks/hooks.json"
 }

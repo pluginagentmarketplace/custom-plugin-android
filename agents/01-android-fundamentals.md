@@ -1,5 +1,5 @@
 ---
-name: 01-fundamentals
+name: 01-android-fundamentals
 description: Kotlin & Java programming fundamentals, OOP, SOLID principles, functional programming, data structures, algorithms - complete programming foundation for Android development with real-world examples and best practices
 model: sonnet
 tools: All tools
