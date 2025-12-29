@@ -1,0 +1,136 @@
+# Room Database Configuration
+# SQLite ORM settings and best practices
+
+version: "1.0.0"
+
+# Database Configuration
+database:
+  name: "app_database"
+  version: 1
+  export_schema: true
+  fallback_to_destructive_migration: false
+
+# Entity Guidelines
+entities:
+  naming:
+    table_prefix: ""
+    use_snake_case: true
+
+  annotations:
+    primary_key:
+      auto_generate: true
+      type: "Long"
+
+    indices:
+      unique: true
+      columns: ["email"]
+
+  example: |
+    @Entity(
+        tableName = "users",
+        indices = [Index(value = ["email"], unique = true)]
+    )
+    data class UserEntity(
+        @PrimaryKey(autoGenerate = true)
+        val id: Long = 0,
+        val name: String,
+        val email: String,
+        @ColumnInfo(name = "created_at")
+        val createdAt: Long = System.currentTimeMillis()
+    )
+
+# DAO Patterns
+dao:
+  query_patterns:
+    select_all:
+      return_type: "Flow<List<T>>"
+      suspend: false
+
+    select_one:
+      return_type: "suspend T?"
+      suspend: true
+
+    insert:
+      conflict_strategy: "OnConflictStrategy.REPLACE"
+      suspend: true
+
+    delete:
+      suspend: true
+
+  example: |
+    @Dao
+    interface UserDao {
+        @Query("SELECT * FROM users ORDER BY name ASC")
+        fun getAllUsers(): Flow<List<UserEntity>>
+
+        @Query("SELECT * FROM users WHERE id = :id")
+        suspend fun getUserById(id: Long): UserEntity?
+
+        @Insert(onConflict = OnConflictStrategy.REPLACE)
+        suspend fun insert(user: UserEntity): Long
+
+        @Delete
+        suspend fun delete(user: UserEntity)
+
+        @Query("DELETE FROM users")
+        suspend fun deleteAll()
+    }
+
+# Type Converters
+type_converters:
+  date:
+    from: "Date"
+    to: "Long"
+    converter: |
+      @TypeConverter
+      fun fromTimestamp(value: Long?): Date? = value?.let { Date(it) }
+
+      @TypeConverter
+      fun dateToTimestamp(date: Date?): Long? = date?.time
+
+  list:
+    from: "List<String>"
+    to: "String"
+    converter: |
+      @TypeConverter
+      fun fromList(list: List<String>): String = list.joinToString(",")
+
+      @TypeConverter
+      fun toList(data: String): List<String> =
+          if (data.isEmpty()) emptyList() else data.split(",")
+
+# Migrations
+migrations:
+  auto_migration:
+    from: 1
+    to: 2
+    spec: "AutoMigrationSpec"
+
+  manual_migration:
+    from: 1
+    to: 2
+    sql: |
+      ALTER TABLE users ADD COLUMN avatar_url TEXT DEFAULT NULL
+
+# DataStore Configuration
+datastore:
+  preferences:
+    name: "user_preferences"
+    keys:
+      - name: "THEME_MODE"
+        type: "stringPreferencesKey"
+      - name: "NOTIFICATIONS_ENABLED"
+        type: "booleanPreferencesKey"
+      - name: "LAST_SYNC_TIME"
+        type: "longPreferencesKey"
+
+  proto:
+    file: "user_settings.proto"
+    serializer: "UserSettingsSerializer"
+
+# Encryption
+encryption:
+  enabled: true
+  library: "SQLCipher"
+  key_management: "AndroidKeystore"
+  algorithm: "AES-256-GCM"

@@ -1,0 +1,24 @@
+{
+  "name": "pluginagentmarketplace-android",
+  "owner": {
+    "name": "Dr. Umit Kacar & Muhsin Elcicek",
+    "email": "kacarumit.phd@gmail.com",
+    "url": "https://github.com/pluginagentmarketplace"
+  },
+  "plugins": [
+    {
+      "name": "android-development-assistant",
+      "source": "./",
+      "description": "Professional Android development with Kotlin, Jetpack Compose, MVVM, and production deployment",
+      "version": "2.0.0",
+      "keywords": ["android", "kotlin", "jetpack-compose", "mvvm", "mobile"],
+      "author": {
+        "name": "Dr. Umit Kacar & Muhsin Elcicek",
+        "email": "kacarumit.phd@gmail.com",
+        "url": "https://github.com/pluginagentmarketplace"
+      },
+      "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
+      "homepage": "https://github.com/pluginagentmarketplace/custom-plugin-android"
+    }
+  ]
+}

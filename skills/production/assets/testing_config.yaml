@@ -1,0 +1,149 @@
+# Android Testing & Production Configuration
+# Quality assurance and deployment settings
+
+version: "1.0.0"
+
+# Testing Strategy
+testing:
+  coverage:
+    unit_tests: 70%
+    integration_tests: 20%
+    ui_tests: 10%
+
+  unit_tests:
+    framework: JUnit5
+    mocking: MockK
+    assertions: Truth
+    coroutines: kotlinx-coroutines-test
+
+  integration_tests:
+    database: Room in-memory
+    network: MockWebServer
+    di: Hilt testing
+
+  ui_tests:
+    framework: Espresso
+    compose: ComposeTestRule
+    screenshots: true
+
+# Test Organization
+test_structure:
+  unit_tests:
+    location: "src/test/kotlin"
+    naming: "{ClassName}Test"
+    package_mirror: true
+
+  android_tests:
+    location: "src/androidTest/kotlin"
+    naming: "{ClassName}InstrumentedTest"
+
+  shared_test:
+    location: "src/testShared/kotlin"
+    purpose: "Fakes and utilities"
+
+# MockK Configuration
+mockk:
+  relaxed: false
+  clear_after_test: true
+  coEvery_for_suspend: true
+  every_for_regular: true
+
+  patterns:
+    repository: |
+      val mockRepo = mockk<UserRepository>()
+      coEvery { mockRepo.getUser(any()) } returns testUser
+
+    viewmodel: |
+      val mockUseCase = mockk<GetUserUseCase>()
+      coEvery { mockUseCase(any()) } returns testUser
+
+# Coroutines Testing
+coroutines:
+  dispatcher: StandardTestDispatcher
+  scope: TestScope
+  advance: advanceUntilIdle
+
+  example: |
+    @Test
+    fun `load user updates state`() = runTest {
+        viewModel.loadUser(1)
+        advanceUntilIdle()
+        assertEquals(expected, viewModel.state.value)
+    }
+
+# Performance Configuration
+performance:
+  startup:
+    cold_start_target: 500ms
+    warm_start_target: 200ms
+    baseline_profile: true
+
+  rendering:
+    target_fps: 60
+    frame_budget: 16ms
+    jank_threshold: 32ms
+
+  memory:
+    max_heap_usage: 256MB
+    leak_detection: true
+    bitmap_pooling: true
+
+  battery:
+    wakelock_limit: 1min
+    job_scheduling: true
+    doze_compliance: true
+
+# ProGuard / R8 Configuration
+obfuscation:
+  enabled: true
+  minify: true
+  shrink_resources: true
+
+  keep_rules:
+    - "data classes"
+    - "Room entities"
+    - "Retrofit interfaces"
+    - "Serializable classes"
+
+# Security
+security:
+  ssl_pinning: true
+  certificate_transparency: true
+  root_detection: false
+  debug_detection: true
+  encrypted_preferences: true
+
+  owasp_checks:
+    - insecure_data_storage
+    - improper_platform_usage
+    - insecure_communication
+    - insufficient_cryptography
+
+# Deployment
+deployment:
+  tracks:
+    - internal
+    - closed_alpha
+    - open_beta
+    - production
+
+  rollout:
+    staged: true
+    initial_percentage: 5
+    increment: 10
+    full_rollout_days: 7
+
+  monitoring:
+    crash_reporting: Firebase Crashlytics
+    analytics: Firebase Analytics
+    performance: Firebase Performance
+    apm: enabled
+
+# Release Signing
+signing:
+  keystore_location: "release-keystore.jks"
+  key_alias: "release"
+  password_in_env: true
+  v1_signing: true
+  v2_signing: true
+  v3_signing: true

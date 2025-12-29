@@ -1,0 +1,91 @@
+# Kotlin Code Style Configuration
+# Android/Kotlin project style guidelines
+
+version: "1.0.0"
+
+# Naming Conventions
+naming:
+  classes:
+    style: PascalCase
+    examples:
+      - UserRepository
+      - MainActivity
+      - OrderViewModel
+
+  functions:
+    style: camelCase
+    examples:
+      - getUserById
+      - calculateTotal
+      - onButtonClick
+
+  constants:
+    style: SCREAMING_SNAKE_CASE
+    examples:
+      - MAX_RETRY_COUNT
+      - DEFAULT_TIMEOUT_MS
+      - API_BASE_URL
+
+  packages:
+    style: lowercase
+    structure:
+      - com.company.app.feature.subfeature
+    examples:
+      - com.example.myapp.data.repository
+      - com.example.myapp.ui.home
+
+# File Organization
+file_structure:
+  order:
+    - package_statement
+    - imports
+    - class_declaration
+
+  class_body_order:
+    - companion_object
+    - properties
+    - init_blocks
+    - constructors
+    - public_methods
+    - internal_methods
+    - private_methods
+    - nested_classes
+
+# Kotlin-Specific Rules
+kotlin_rules:
+  prefer_val_over_var: true
+  use_data_classes_for_dtos: true
+  use_sealed_classes_for_state: true
+  avoid_nullable_unless_necessary: true
+  use_extension_functions: true
+  prefer_expression_body: true
+  max_function_length: 30
+  max_class_length: 200
+
+# Coroutines Guidelines
+coroutines:
+  scope_usage:
+    viewModelScope: "For ViewModel operations"
+    lifecycleScope: "For Activity/Fragment operations"
+    GlobalScope: "AVOID - use custom scope instead"
+
+  dispatcher_usage:
+    "Dispatchers.Main": "UI operations"
+    "Dispatchers.IO": "Network/Database operations"
+    "Dispatchers.Default": "CPU-intensive work"
+
+# Android-Specific
+android:
+  lifecycle_aware_components: true
+  avoid_context_in_viewmodel: true
+  use_view_binding: true
+  prefer_compose_over_xml: true
+  single_activity_architecture: recommended
+
+# Code Quality
+quality:
+  ktlint_enabled: true
+  detekt_enabled: true
+  max_line_length: 120
+  indent_size: 4
+  continuation_indent: 4

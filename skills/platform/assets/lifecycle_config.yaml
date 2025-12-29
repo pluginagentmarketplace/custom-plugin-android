@@ -1,0 +1,146 @@
+# Android Lifecycle Configuration
+# Best practices for component lifecycle management
+
+version: "1.0.0"
+
+# Activity Lifecycle
+activity:
+  lifecycle_callbacks:
+    onCreate:
+      purpose: "Initial setup"
+      actions:
+        - setContentView
+        - initializeViewBinding
+        - setupViewModel
+        - restoreSavedState
+      avoid:
+        - networkCalls
+        - heavyComputation
+
+    onStart:
+      purpose: "Become visible"
+      actions:
+        - registerBroadcastReceivers
+        - startAnimations
+      notes: "Called when activity becomes visible"
+
+    onResume:
+      purpose: "Gain focus"
+      actions:
+        - resumePlayer
+        - startLocationUpdates
+        - refreshUI
+      notes: "User can interact"
+
+    onPause:
+      purpose: "Lose focus"
+      actions:
+        - pausePlayer
+        - saveProgress
+      avoid:
+        - heavySaveOperations
+      notes: "Keep quick, user waiting"
+
+    onStop:
+      purpose: "Hidden"
+      actions:
+        - unregisterReceivers
+        - releaseResources
+        - saveState
+      notes: "Safe for heavy operations"
+
+    onDestroy:
+      purpose: "Final cleanup"
+      actions:
+        - cancelCoroutines
+        - closeConnections
+        - releaseMemory
+
+  configuration_change:
+    handling:
+      - viewModel: "Survives configuration changes"
+      - savedInstanceState: "For transient UI state"
+      - retainInstance: "DEPRECATED - use ViewModel"
+
+# Fragment Lifecycle
+fragment:
+  lifecycle_callbacks:
+    onAttach:
+      purpose: "Attached to activity"
+      access: "Context available"
+
+    onCreate:
+      purpose: "Fragment created"
+      actions:
+        - initializeViewModel
+        - parseArguments
+
+    onCreateView:
+      purpose: "Create view hierarchy"
+      actions:
+        - inflateLayout
+        - setupBinding
+
+    onViewCreated:
+      purpose: "View ready"
+      actions:
+        - setupObservers
+        - initializeUI
+
+    onDestroyView:
+      purpose: "View destroyed"
+      actions:
+        - clearBinding
+        - removeObservers
+
+  best_practices:
+    - use_viewLifecycleOwner: true
+    - clear_binding_in_onDestroyView: true
+    - use_by_viewModels: true
+    - prefer_navigation_component: true
+
+# Service Lifecycle
+service:
+  types:
+    started:
+      trigger: startService()
+      lifecycle: "Independent of caller"
+      cleanup: stopSelf() or stopService()
+
+    bound:
+      trigger: bindService()
+      lifecycle: "Lives while clients bound"
+      cleanup: "Automatic when unbound"
+
+    foreground:
+      trigger: startForegroundService()
+      requirement: "Must show notification within 5s"
+      use_case: "Long-running visible operations"
+
+# ViewModel
+viewmodel:
+  lifecycle:
+    scope: "Survives configuration changes"
+    cleared: "When associated lifecycle destroyed"
+
+  best_practices:
+    - dont_hold_context: true
+    - dont_hold_views: true
+    - use_viewModelScope: true
+    - expose_immutable_state: true
+
+# Lifecycle-Aware Components
+lifecycle_aware:
+  LiveData:
+    observer_lifecycle: true
+    automatic_cleanup: true
+    main_thread: true
+
+  StateFlow:
+    lifecycle_scope_collect: true
+    repeatOnLifecycle: true
+    cold_stream: false
+
+  collectAsStateWithLifecycle:
+    compose_integration: true
+    automatic_pause_resume: true

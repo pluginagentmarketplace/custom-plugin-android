@@ -1,0 +1,181 @@
+# MVVM & Clean Architecture Configuration
+# Architectural patterns and guidelines
+
+version: "1.0.0"
+
+# Architecture Layers
+layers:
+  presentation:
+    components:
+      - Activity
+      - Fragment
+      - Composable
+      - ViewModel
+    responsibilities:
+      - UI rendering
+      - User input handling
+      - State observation
+      - Navigation
+    dependencies:
+      - domain
+
+  domain:
+    components:
+      - UseCase
+      - Repository (interface)
+      - Model
+    responsibilities:
+      - Business logic
+      - Data transformation
+      - Validation
+    dependencies: []  # No dependencies - pure Kotlin
+
+  data:
+    components:
+      - RepositoryImpl
+      - DataSource
+      - Entity
+      - DTO
+    responsibilities:
+      - Data fetching
+      - Caching
+      - Mapping
+    dependencies:
+      - domain
+
+# Package Structure
+package_structure:
+  by_feature:
+    enabled: true
+    pattern: |
+      com.example.app/
+      ├── feature/
+      │   ├── user/
+      │   │   ├── data/
+      │   │   │   ├── repository/
+      │   │   │   ├── local/
+      │   │   │   └── remote/
+      │   │   ├── domain/
+      │   │   │   ├── model/
+      │   │   │   └── usecase/
+      │   │   └── presentation/
+      │   │       ├── screen/
+      │   │       └── viewmodel/
+      │   └── order/
+      ├── core/
+      │   ├── network/
+      │   ├── database/
+      │   └── util/
+      └── di/
+
+  by_layer:
+    enabled: false
+    pattern: |
+      com.example.app/
+      ├── data/
+      ├── domain/
+      └── presentation/
+
+# ViewModel Configuration
+viewmodel:
+  state_management:
+    type: StateFlow  # StateFlow, LiveData
+    pattern: MVI  # MVVM, MVI
+
+  state_class:
+    sealed: true
+    immutable: true
+    loading_state: true
+    error_state: true
+
+  example: |
+    sealed class UiState<out T> {
+        object Loading : UiState<Nothing>()
+        data class Success<T>(val data: T) : UiState<T>()
+        data class Error(val message: String) : UiState<Nothing>()
+    }
+
+# UseCase Configuration
+usecase:
+  naming:
+    pattern: "{Action}{Resource}UseCase"
+    examples:
+      - GetUserUseCase
+      - CreateOrderUseCase
+      - ValidateEmailUseCase
+
+  invocation:
+    operator: true
+    example: |
+      class GetUserUseCase @Inject constructor(
+          private val repository: UserRepository
+      ) {
+          suspend operator fun invoke(id: Int): User {
+              return repository.getUser(id)
+          }
+      }
+
+# Repository Pattern
+repository:
+  interface_location: domain
+  implementation_location: data
+
+  caching_strategy:
+    network_first: true
+    cache_fallback: true
+    stale_while_revalidate: false
+
+  example: |
+    // Domain layer - interface
+    interface UserRepository {
+        suspend fun getUser(id: Int): User
+        fun observeUsers(): Flow<List<User>>
+    }
+
+    // Data layer - implementation
+    class UserRepositoryImpl @Inject constructor(
+        private val api: UserApi,
+        private val dao: UserDao
+    ) : UserRepository {
+        override suspend fun getUser(id: Int): User {
+            return dao.getUser(id) ?: api.getUser(id).also {
+                dao.insert(it.toEntity())
+            }.toUser()
+        }
+    }
+
+# Dependency Injection
+di:
+  framework: Hilt
+  scope_pattern:
+    singleton: "Application-wide dependencies"
+    activity_retained: "Survive configuration changes"
+    view_model: "ViewModel scope"
+
+  module_organization:
+    - NetworkModule
+    - DatabaseModule
+    - RepositoryModule
+    - UseCaseModule
+
+# SOLID Principles
+solid:
+  single_responsibility:
+    description: "One class, one reason to change"
+    example: "ViewModel handles UI state, not network calls"
+
+  open_closed:
+    description: "Open for extension, closed for modification"
+    example: "Use interfaces for data sources"
+
+  liskov_substitution:
+    description: "Subtypes must be substitutable"
+    example: "All Repository implementations work the same"
+
+  interface_segregation:
+    description: "Many specific interfaces over one general"
+    example: "Separate read and write repository interfaces"
+
+  dependency_inversion:
+    description: "Depend on abstractions, not concretions"
+    example: "ViewModel depends on UseCase interface"

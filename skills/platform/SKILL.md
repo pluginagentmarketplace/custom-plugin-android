@@ -1,6 +1,9 @@
 ---
-name: android-platform
+name: platform
 description: Android core components lifecycle, Activities, Fragments, Services, Intent system. Use when working with Android components or handling lifecycle.
+sasmp_version: "1.3.0"
+bonded_agent: 02-platform
+bond_type: PRIMARY_BOND
 ---
 
 # Android Platform Skill

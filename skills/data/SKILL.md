@@ -1,6 +1,9 @@
 ---
-name: data-persistence
+name: data
 description: Room ORM, SQLite, SharedPreferences, DataStore, encryption. Use when implementing data storage and database operations.
+sasmp_version: "1.3.0"
+bonded_agent: 04-data-management
+bond_type: PRIMARY_BOND
 ---
 
 # Data Persistence Skill

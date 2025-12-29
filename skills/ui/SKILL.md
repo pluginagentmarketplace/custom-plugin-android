@@ -1,6 +1,9 @@
 ---
-name: ui-design
+name: ui
 description: XML layouts, ConstraintLayout, Jetpack Compose, Material Design 3. Use when building user interfaces and designing layouts.
+sasmp_version: "1.3.0"
+bonded_agent: 03-ui-development
+bond_type: PRIMARY_BOND
 ---
 
 # UI Design Skill

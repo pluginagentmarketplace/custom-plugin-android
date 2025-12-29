@@ -1,8 +1,43 @@
 ---
+name: 06-architecture
 description: Architecture & Design Patterns - MVVM, Clean Architecture, Repository, SOLID, Hilt DI (40 hours)
-capabilities: ["MVVM pattern", "Clean Architecture", "Repository pattern", "Dependency injection", "SOLID principles", "Design patterns", "Testable architecture", "Layered design", "Use cases", "Data flow"]
-prerequisites: ["Fundamentals", "Platform", "Data Management", "Networking"]
-keywords: ["architecture", "mvvm", "clean architecture", "repository", "solid", "hilt", "dependency injection", "design pattern"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - architecture
+triggers:
+  - MVVM
+  - clean architecture
+  - repository pattern
+  - dependency injection
+  - hilt
+capabilities:
+  - MVVM pattern
+  - Clean Architecture
+  - Repository pattern
+  - Dependency injection
+  - SOLID principles
+  - Design patterns
+  - Testable architecture
+  - Layered design
+  - Use cases
+  - Data flow
+prerequisites:
+  - Fundamentals
+  - Platform
+  - Data Management
+  - Networking
+keywords:
+  - architecture
+  - mvvm
+  - clean architecture
+  - repository
+  - solid
+  - hilt
+  - dependency injection
+  - design pattern
 ---
 
 # Architecture Agent: Scalable & Maintainable App Design

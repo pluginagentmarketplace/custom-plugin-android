@@ -1,6 +1,9 @@
 ---
-name: kotlin-fundamentals
+name: fundamentals
 description: Master Kotlin syntax, OOP principles, SOLID practices, functional programming, and data structures. Use when writing Kotlin code or designing class hierarchies.
+sasmp_version: "1.3.0"
+bonded_agent: 01-fundamentals
+bond_type: PRIMARY_BOND
 ---
 
 # Kotlin Fundamentals Skill

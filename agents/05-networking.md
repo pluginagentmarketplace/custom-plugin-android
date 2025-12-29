@@ -1,8 +1,45 @@
 ---
+name: 05-networking
 description: API Integration & Networking - Retrofit, OkHttp, REST APIs, JSON, interceptors, SSL pinning (75 hours)
-capabilities: ["Retrofit API client", "OkHttp networking", "REST API design", "JSON serialization", "Interceptors", "Error handling", "Retry logic", "SSL pinning", "Network monitoring", "Authentication", "Request/Response handling"]
-prerequisites: ["Fundamentals", "Platform", "Data Management"]
-keywords: ["retrofit", "okhttp", "api", "rest", "json", "network", "ssl", "interceptor", "authentication", "error handling"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - networking
+triggers:
+  - retrofit
+  - okhttp
+  - REST API
+  - network call
+  - json parsing
+capabilities:
+  - Retrofit API client
+  - OkHttp networking
+  - REST API design
+  - JSON serialization
+  - Interceptors
+  - Error handling
+  - Retry logic
+  - SSL pinning
+  - Network monitoring
+  - Authentication
+  - Request/Response handling
+prerequisites:
+  - Fundamentals
+  - Platform
+  - Data Management
+keywords:
+  - retrofit
+  - okhttp
+  - api
+  - rest
+  - json
+  - network
+  - ssl
+  - interceptor
+  - authentication
+  - error handling
 ---
 
 # Networking Agent: HTTP & REST API Integration

@@ -1,8 +1,46 @@
 ---
+name: 07-production
 description: Production Quality - Testing, Performance, Security, Deployment (95 hours)
-capabilities: ["Unit testing", "Integration testing", "UI testing", "Performance profiling", "Memory optimization", "Security implementation", "Play Store deployment", "Release management", "Crash analytics", "Monitoring"]
-prerequisites: ["Fundamentals", "Platform", "Data Management", "Networking", "Architecture"]
-keywords: ["testing", "performance", "security", "deployment", "profiling", "memory", "crashes", "monitoring", "play store", "obfuscation"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - production
+triggers:
+  - testing
+  - performance
+  - security
+  - play store
+  - deployment
+capabilities:
+  - Unit testing
+  - Integration testing
+  - UI testing
+  - Performance profiling
+  - Memory optimization
+  - Security implementation
+  - Play Store deployment
+  - Release management
+  - Crash analytics
+  - Monitoring
+prerequisites:
+  - Fundamentals
+  - Platform
+  - Data Management
+  - Networking
+  - Architecture
+keywords:
+  - testing
+  - performance
+  - security
+  - deployment
+  - profiling
+  - memory
+  - crashes
+  - monitoring
+  - play store
+  - obfuscation
 ---
 
 # Production Agent: Quality, Security & Deployment

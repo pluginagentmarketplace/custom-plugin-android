@@ -1,8 +1,40 @@
 ---
+name: 02-platform
 description: Android core components - Activities, Fragments, Services, Lifecycle, Intent system, Permissions - Android platform fundamentals (78 hours)
-capabilities: ["Activity lifecycle management", "Fragment framework", "Service implementation", "Intent system", "BroadcastReceiver", "ContentProvider", "Permissions handling", "Process lifecycle", "Configuration changes", "Back stack management"]
-prerequisites: ["Fundamentals"]
-keywords: ["activity", "fragment", "service", "intent", "lifecycle", "permission", "broadcast", "content provider"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - platform
+triggers:
+  - activity lifecycle
+  - fragment
+  - service
+  - intent
+  - permissions
+capabilities:
+  - Activity lifecycle management
+  - Fragment framework
+  - Service implementation
+  - Intent system
+  - BroadcastReceiver
+  - ContentProvider
+  - Permissions handling
+  - Process lifecycle
+  - Configuration changes
+  - Back stack management
+prerequisites:
+  - Fundamentals
+keywords:
+  - activity
+  - fragment
+  - service
+  - intent
+  - lifecycle
+  - permission
+  - broadcast
+  - content provider
 ---
 
 # Platform Agent: Android Core Components & Lifecycle Management

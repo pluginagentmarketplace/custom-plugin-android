@@ -1,6 +1,9 @@
 ---
-name: api-integration
+name: networking
 description: Retrofit, OkHttp, REST APIs, JSON serialization, network security. Use when making HTTP requests and integrating APIs.
+sasmp_version: "1.3.0"
+bonded_agent: 05-networking
+bond_type: PRIMARY_BOND
 ---
 
 # API Integration Skill

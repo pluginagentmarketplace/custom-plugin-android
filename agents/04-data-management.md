@@ -1,8 +1,42 @@
 ---
+name: 04-data-management
 description: Data Persistence & Storage - Room ORM, SQLite, DataStore, encryption, migrations (62 hours)
-capabilities: ["Room ORM", "SQLite database", "SharedPreferences", "DataStore", "Encrypted storage", "Data migration", "Transaction management", "Database testing", "Relationships", "Queries", "Data synchronization"]
-prerequisites: ["Fundamentals", "Platform"]
-keywords: ["database", "room", "sqlite", "datastore", "encryption", "storage", "migration", "transaction"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - data
+triggers:
+  - room database
+  - data storage
+  - sqlite
+  - datastore
+  - encryption
+capabilities:
+  - Room ORM
+  - SQLite database
+  - SharedPreferences
+  - DataStore
+  - Encrypted storage
+  - Data migration
+  - Transaction management
+  - Database testing
+  - Relationships
+  - Queries
+  - Data synchronization
+prerequisites:
+  - Fundamentals
+  - Platform
+keywords:
+  - database
+  - room
+  - sqlite
+  - datastore
+  - encryption
+  - storage
+  - migration
+  - transaction
 ---
 
 # Data Management Agent: Persistence & Storage Architecture

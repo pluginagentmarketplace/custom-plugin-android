@@ -1,73 +1,272 @@
-# custom-plugin-android
+<div align="center">
 
-**Professional Android Development Plugin for Claude Code**
+# Android Development Assistant
 
-Ultra-comprehensive Android development guide with **7 specialized agents**, **7 invokable skills**, **3 interactive commands**, and **757+ hours of content**.
+### Complete Android Mastery for Claude Code
 
-Based on [developer-roadmap](https://github.com/kamranahmedse/developer-roadmap) Android pathway.
+**Master Kotlin, Jetpack Compose, MVVM architecture, and production deployment with 7 specialized agents and 7 production-ready skills**
 
-## Features
+[![Verified](https://img.shields.io/badge/Verified-Working-success?style=flat-square&logo=checkmarx)](https://github.com/pluginagentmarketplace/custom-plugin-android)
+[![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
+[![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](https://github.com/pluginagentmarketplace/custom-plugin-android)
+[![Status](https://img.shields.io/badge/Status-Production_Ready-brightgreen?style=flat-square)](https://github.com/pluginagentmarketplace/custom-plugin-android)
+[![Agents](https://img.shields.io/badge/Agents-7-orange?style=flat-square)](#agents-overview)
+[![Skills](https://img.shields.io/badge/Skills-7-purple?style=flat-square)](#skills-reference)
+[![SASMP](https://img.shields.io/badge/SASMP-v1.3.0-blueviolet?style=flat-square)](#)
 
-### 7 Specialized Agents
-1. **Fundamentals** (172h) - Kotlin, OOP, SOLID, algorithms
-2. **Platform** (78h) - Android components, lifecycle
-3. **UI Development** (235h) - Layouts, Compose, Material Design
-4. **Data Management** (62h) - Room, SQLite, DataStore
-5. **Networking** (75h) - Retrofit, OkHttp, APIs
-6. **Architecture** (40h) - MVVM, Clean Architecture
-7. **Production** (95h) - Testing, security, deployment
+[![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)](skills/fundamentals/)
+[![Jetpack Compose](https://img.shields.io/badge/Jetpack_Compose-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white)](skills/ui/)
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](skills/platform/)
+[![Material Design](https://img.shields.io/badge/Material_Design-757575?style=for-the-badge&logo=materialdesign&logoColor=white)](skills/ui/)
 
-### 7 Invokable Skills
-- `kotlin-fundamentals`: Language essentials
-- `android-platform`: Component lifecycle
-- `ui-design`: Layout and UI building
-- `data-persistence`: Database and storage
-- `api-integration`: Networking and APIs
-- `app-architecture`: Design patterns
-- `production-quality`: Testing and deployment
+[Quick Start](#quick-start) | [Agents](#agents-overview) | [Skills](#skills-reference) | [Commands](#commands)
 
-### 3 Interactive Commands
-- `/roadmap` - 7-step learning path with timeline
-- `/agent-guide` - Detailed guide to all agents
-- `/quick-start` - Essential resources and quick solutions
+</div>
 
-## Installation
+---
 
-### Option 1: Load Locally (Fastest)
-```bash
-# In Claude Code:
-File → Load Plugin → /home/user/custom-plugin-android
-```
+## Verified Installation
 
-### Option 2: From GitHub
-```bash
-git clone https://github.com/pluginagentmarketplace/custom-plugin-android.git
-# Then load in Claude Code
-```
+> **This plugin has been tested and verified working on Claude Code.**
+> Last verified: December 2025
+
+---
 
 ## Quick Start
 
-1. **View learning roadmap:**
-   ```
-   /roadmap
-   ```
+### Option 1: Install from GitHub (Recommended)
 
-2. **Explore all agents:**
-   ```
-   /agent-guide
-   ```
+```bash
+# Step 1: Add the marketplace from GitHub
+/plugin add marketplace pluginagentmarketplace/custom-plugin-android
 
-3. **Get quick help:**
-   ```
-   /quick-start
-   ```
+# Step 2: Install the plugin
+/plugin install android-development-assistant@pluginagentmarketplace-android
 
-## Learning Path
+# Step 3: Restart Claude Code to load new plugins
+```
 
-### Total Duration: 37-45 weeks
-- @ 2 hours/day: 45+ weeks
-- @ 3 hours/day: 30+ weeks  
-- @ 4 hours/day: 19-24 weeks
+### Option 2: Clone and Load Locally
+
+```bash
+# Clone the repository
+git clone https://github.com/pluginagentmarketplace/custom-plugin-android.git
+
+# Navigate to the directory in Claude Code
+cd custom-plugin-android
+
+# Load the plugin
+/plugin load .
+```
+
+After loading, restart Claude Code.
+
+### Verify Installation
+
+After restarting Claude Code, verify the plugin is loaded. You should see these agents available:
+
+```
+custom-plugin-android:01-fundamentals
+custom-plugin-android:02-platform
+custom-plugin-android:03-ui-development
+custom-plugin-android:04-data-management
+custom-plugin-android:05-networking
+custom-plugin-android:06-architecture
+custom-plugin-android:07-production
+```
+
+---
+
+## Available Skills
+
+Once installed, these 7 skills become available:
+
+| Skill | Invoke Command | Description |
+|-------|----------------|-------------|
+| Kotlin Fundamentals | `Skill("android-development-assistant:kotlin-fundamentals")` | Language essentials, OOP, SOLID |
+| Android Platform | `Skill("android-development-assistant:android-platform")` | Components, lifecycle, services |
+| UI Design | `Skill("android-development-assistant:ui-design")` | Layouts, Compose, Material Design |
+| Data Persistence | `Skill("android-development-assistant:data-persistence")` | Room, SQLite, DataStore |
+| API Integration | `Skill("android-development-assistant:api-integration")` | Retrofit, OkHttp, networking |
+| App Architecture | `Skill("android-development-assistant:app-architecture")` | MVVM, Clean Architecture |
+| Production Quality | `Skill("android-development-assistant:production-quality")` | Testing, security, deployment |
+
+---
+
+## What This Plugin Does
+
+This plugin provides **7 specialized agents** and **7 production-ready skills** covering 757+ hours of Android development content:
+
+| Agent | Hours | Purpose |
+|-------|-------|---------|
+| **Fundamentals** | 172h | Kotlin, OOP, SOLID, algorithms |
+| **Platform** | 78h | Activities, Fragments, Services, lifecycle |
+| **UI Development** | 235h | Layouts, Compose, Material Design |
+| **Data Management** | 62h | Room, SQLite, DataStore |
+| **Networking** | 75h | Retrofit, OkHttp, APIs |
+| **Architecture** | 40h | MVVM, Clean Architecture |
+| **Production** | 95h | Testing, security, deployment |
+
+---
+
+## Agents Overview
+
+### 7 Implementation Agents
+
+Each agent is designed to **do the work**, not just explain:
+
+| Agent | Capabilities | Example Prompts |
+|-------|--------------|-----------------|
+| **Fundamentals** | Kotlin syntax, coroutines, null safety | `"Explain coroutines"`, `"SOLID principles"` |
+| **Platform** | Activities, Fragments, Services | `"Activity lifecycle"`, `"Intent handling"` |
+| **UI Development** | Layouts, Compose, Material 3 | `"Create Compose UI"`, `"ConstraintLayout"` |
+| **Data Management** | Room, DataStore, encryption | `"Room database"`, `"DataStore migration"` |
+| **Networking** | Retrofit, OkHttp, caching | `"Setup Retrofit"`, `"API error handling"` |
+| **Architecture** | MVVM, Clean Architecture, DI | `"MVVM pattern"`, `"Hilt injection"` |
+| **Production** | Testing, ProGuard, Play Store | `"Unit testing"`, `"App signing"` |
+
+---
+
+## Commands
+
+3 interactive commands for Android development workflows:
+
+| Command | Usage | Description |
+|---------|-------|-------------|
+| `/roadmap` | `/roadmap` | View 7-step learning path with timeline |
+| `/agent-guide` | `/agent-guide` | Detailed guide to all 7 agents |
+| `/quick-start` | `/quick-start` | Essential resources and quick solutions |
+
+---
+
+## Skills Reference
+
+Each skill includes **Golden Format** content:
+- `assets/` - Configuration templates and setup files
+- `scripts/` - Automation and validation scripts
+- `references/` - Methodology guides and best practices
+
+### All 7 Skills by Category
+
+| Category | Skills |
+|----------|--------|
+| **Language** | kotlin-fundamentals |
+| **Platform** | android-platform |
+| **UI** | ui-design |
+| **Data** | data-persistence |
+| **Network** | api-integration |
+| **Architecture** | app-architecture |
+| **Production** | production-quality |
+
+---
+
+## Usage Examples
+
+### Example 1: Create Jetpack Compose UI
+
+```kotlin
+// Before: XML layouts
+
+// After (with UI Development agent):
+Skill("android-development-assistant:ui-design")
+
+// Generates:
+// - Compose component structure
+// - Material 3 theming
+// - State management
+// - Preview annotations
+```
+
+### Example 2: Setup Room Database
+
+```kotlin
+// Before: Manual SQLite
+
+// After (with Data Management agent):
+Skill("android-development-assistant:data-persistence")
+
+// Provides:
+// - Entity definitions
+// - DAO interfaces
+// - Database setup
+// - Migration strategies
+```
+
+### Example 3: Implement MVVM Architecture
+
+```kotlin
+// Before: No architecture
+
+// After (with Architecture agent):
+Skill("android-development-assistant:app-architecture")
+
+// Creates:
+// - ViewModel setup
+// - Repository pattern
+// - Use cases
+// - Hilt dependency injection
+```
+
+---
+
+## Plugin Structure
+
+```
+custom-plugin-android/
+├── .claude-plugin/
+│   ├── plugin.json           # Plugin manifest
+│   └── marketplace.json      # Marketplace config
+├── agents/                   # 7 specialized agents
+│   ├── 01-fundamentals.md
+│   ├── 02-platform.md
+│   ├── 03-ui-development.md
+│   ├── 04-data-management.md
+│   ├── 05-networking.md
+│   ├── 06-architecture.md
+│   └── 07-production.md
+├── skills/                   # 7 skills (Golden Format)
+│   ├── fundamentals/SKILL.md
+│   ├── platform/SKILL.md
+│   ├── ui/SKILL.md
+│   ├── data/SKILL.md
+│   ├── networking/SKILL.md
+│   ├── architecture/SKILL.md
+│   └── production/SKILL.md
+├── commands/                 # 3 slash commands
+│   ├── roadmap.md
+│   ├── agent-guide.md
+│   └── quick-start.md
+├── hooks/hooks.json
+├── README.md
+├── CHANGELOG.md
+└── LICENSE
+```
+
+---
+
+## Technology Coverage
+
+| Category | Technologies |
+|----------|--------------|
+| **Language** | Kotlin 1.9+, Coroutines, Flow |
+| **UI** | Jetpack Compose, Material 3, ConstraintLayout |
+| **Data** | Room, SQLite, DataStore, SharedPreferences |
+| **Network** | Retrofit, OkHttp, Ktor, GraphQL |
+| **DI** | Hilt, Koin, Dagger |
+| **Architecture** | MVVM, MVI, Clean Architecture |
+| **Testing** | JUnit, Espresso, Mockito, Compose Testing |
+| **Security** | EncryptedSharedPreferences, SSL Pinning |
+
+---
+
+## Learning Paths
+
+| Path | Duration | Focus |
+|------|----------|-------|
+| **Total** | 37-45 weeks | Complete Android mastery |
+| @ 2 hours/day | 45+ weeks | Beginner friendly |
+| @ 3 hours/day | 30+ weeks | Balanced approach |
+| @ 4 hours/day | 19-24 weeks | Accelerated learning |
 
 ### Recommended Sequence
 1. Fundamentals (8-10 weeks)
@@ -78,76 +277,21 @@ git clone https://github.com/pluginagentmarketplace/custom-plugin-android.git
 6. Architecture (2-3 weeks)
 7. Production (5-6 weeks)
 
-## Plugin Structure
+---
 
-```
-custom-plugin-android/
-├── .claude-plugin/
-│   └── plugin.json              # Plugin manifest
-├── agents/                      # 7 Agent markdown files
-│   ├── 01-fundamentals.md
-│   ├── 02-platform.md
-│   ├── 03-ui-development.md
-│   ├── 04-data-management.md
-│   ├── 05-networking.md
-│   ├── 06-architecture.md
-│   └── 07-production.md
-├── commands/                    # 3 Interactive commands
-│   ├── roadmap.md
-│   ├── agent-guide.md
-│   └── quick-start.md
-├── skills/                      # 7 Invokable skills
-│   ├── fundamentals/SKILL.md
-│   ├── platform/SKILL.md
-│   ├── ui/SKILL.md
-│   ├── data/SKILL.md
-│   ├── networking/SKILL.md
-│   ├── architecture/SKILL.md
-│   └── production/SKILL.md
-├── README.md                    # This file
-└── LICENSE                      # MIT License
-```
+## Requirements
 
-## Content Overview
+| Requirement | Version |
+|-------------|---------|
+| Android Studio | 2022.1+ |
+| Gradle | 7.0+ |
+| Kotlin | 1.8+ |
+| Android SDK | 24+ (min API) |
+| Java | 11+ |
 
-| Agent | Hours | Topics | Level |
-|-------|-------|--------|-------|
-| Fundamentals | 172 | Kotlin, OOP, SOLID | Beginner |
-| Platform | 78 | Activities, Fragments, Services | Beginner |
-| UI Development | 235 | Layouts, Compose, Material | Intermediate |
-| Data Management | 62 | Room, SQLite, DataStore | Intermediate |
-| Networking | 75 | Retrofit, OkHttp, APIs | Intermediate |
-| Architecture | 40 | MVVM, Clean Arch, Patterns | Advanced |
-| Production | 95 | Testing, Security, Deploy | Advanced |
-| **TOTAL** | **757+** | **50+ Topics** | - |
+---
 
-## Key Features
-
-✅ **Comprehensive**: 757+ hours of professional content
-✅ **Structured**: 7-step progressive learning path
-✅ **Practical**: Real-world code examples throughout
-✅ **Current**: Based on latest Android practices (2024)
-✅ **Accessible**: Works offline, no external dependencies
-✅ **Interactive**: Commands for navigation and exploration
-✅ **Production-Ready**: Covers testing, security, deployment
-
-## For Quick Help
-
-Use `/quick-start` for:
-- Common Android questions
-- Quick code solutions
-- Essential resource links
-- Project setup guidance
-
-## For Deep Learning
-
-Choose an agent from `/agent-guide` for:
-- Complete concept explanations
-- Code examples and patterns
-- Best practices and pitfalls
-- Learning timelines
-
-## Best Practices Throughout
+## Best Practices
 
 - **SOLID Principles**: Applied in every agent
 - **Testing**: Unit, integration, and UI testing
@@ -156,50 +300,52 @@ Choose an agent from `/agent-guide` for:
 - **Architecture**: MVVM, Clean Architecture patterns
 - **Modern APIs**: AndroidX, Jetpack, Kotlin coroutines
 
-## Requirements
+---
 
-- Android Studio 2022.1+
-- Gradle 7.0+
-- Kotlin 1.8+
-- Android SDK 24+ (min API level)
-- Java 11+
+## Metadata
 
-## Repository Information
+| Field | Value |
+|-------|-------|
+| **Last Updated** | 2025-12-28 |
+| **Maintenance Status** | Active |
+| **SASMP Version** | 1.3.0 |
+| **Support** | [Issues](../../issues) |
 
-- **Repository**: https://github.com/pluginagentmarketplace/custom-plugin-android
-- **License**: MIT
-- **Based On**: developer-roadmap.sh
-- **Version**: 1.0.0
-- **Updated**: 2024
-
-## Contributing
-
-Contributions welcome! Areas for enhancement:
-- Additional code examples
-- Video tutorial links
-- More detailed explanations
-- Community resources
+---
 
 ## License
 
-MIT License - See LICENSE file
-
-## Feedback & Support
-
-- GitHub Issues: [Report bugs](https://github.com/pluginagentmarketplace/custom-plugin-android/issues)
-- Discussions: [Share ideas](https://github.com/pluginagentmarketplace/custom-plugin-android/discussions)
+MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## Next Steps
+## Contributing
 
-1. **First time?** → Run `/quick-start`
-2. **Want learning path?** → Run `/roadmap`
-3. **Explore agents?** → Run `/agent-guide`
-4. **Ready to learn?** → Choose starting agent
+Contributions are welcome:
 
-**Happy learning! Build amazing Android apps with professional practices.** 🚀
+1. Fork the repository
+2. Create a feature branch
+3. Follow the Golden Format for new skills
+4. Submit a pull request
 
 ---
 
-Made with ❤️ for Android developers everywhere.
+## Contributors
+
+**Authors:**
+- **Dr. Umit Kacar** - Senior AI Researcher & Engineer
+- **Muhsin Elcicek** - Senior Software Architect
+
+---
+
+<div align="center">
+
+**Master Android development with AI assistance!**
+
+[![Made for Android](https://img.shields.io/badge/Made%20for-Android%20Developers-3DDC84?style=for-the-badge&logo=android)](https://github.com/pluginagentmarketplace/custom-plugin-android)
+
+**Built by Dr. Umit Kacar & Muhsin Elcicek**
+
+*Based on [roadmap.sh/android](https://roadmap.sh/android)*
+
+</div>

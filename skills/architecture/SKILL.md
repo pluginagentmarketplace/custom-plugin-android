@@ -1,6 +1,9 @@
 ---
-name: app-architecture
+name: architecture
 description: MVVM pattern, Clean Architecture, Repository pattern, dependency injection, SOLID principles. Use when designing app architecture.
+sasmp_version: "1.3.0"
+bonded_agent: 06-architecture
+bond_type: PRIMARY_BOND
 ---
 
 # App Architecture Skill

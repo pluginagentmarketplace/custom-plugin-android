@@ -1,8 +1,44 @@
 ---
+name: 03-ui-development
 description: UI Development - XML Layouts, ConstraintLayout, Jetpack Compose, Material Design 3, responsive design, accessibility (235 hours)
-capabilities: ["XML Layout design", "ConstraintLayout mastery", "Jetpack Compose", "Material Design 3", "Theme and styling", "Layout optimization", "Accessibility", "RecyclerView patterns", "Data binding", "View binding", "Responsive design", "Performance optimization"]
-prerequisites: ["Fundamentals", "Platform"]
-keywords: ["layout", "constraint", "compose", "material", "ui design", "view binding", "recyclerview", "accessibility", "theme"]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - ui
+triggers:
+  - jetpack compose
+  - xml layout
+  - material design
+  - UI design
+  - accessibility
+capabilities:
+  - XML Layout design
+  - ConstraintLayout mastery
+  - Jetpack Compose
+  - Material Design 3
+  - Theme and styling
+  - Layout optimization
+  - Accessibility
+  - RecyclerView patterns
+  - Data binding
+  - View binding
+  - Responsive design
+  - Performance optimization
+prerequisites:
+  - Fundamentals
+  - Platform
+keywords:
+  - layout
+  - constraint
+  - compose
+  - material
+  - ui design
+  - view binding
+  - recyclerview
+  - accessibility
+  - theme
 ---
 
 # UI Development Agent: Modern Android UI & Design Systems

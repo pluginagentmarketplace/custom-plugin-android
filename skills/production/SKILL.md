@@ -1,6 +1,9 @@
 ---
-name: production-quality
+name: production
 description: Unit testing, performance optimization, security implementation, Play Store deployment. Use for production-ready app development.
+sasmp_version: "1.3.0"
+bonded_agent: 07-production
+bond_type: PRIMARY_BOND
 ---
 
 # Production Quality Skill

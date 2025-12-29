@@ -1,0 +1,103 @@
+# Retrofit & OkHttp Configuration
+# HTTP client settings and best practices
+
+version: "1.0.0"
+
+# OkHttp Configuration
+okhttp:
+  timeouts:
+    connect: 30s
+    read: 30s
+    write: 30s
+
+  connection_pool:
+    max_idle_connections: 5
+    keep_alive_duration: 5m
+
+  interceptors:
+    logging:
+      level: BODY  # NONE, BASIC, HEADERS, BODY
+      enabled_in_debug: true
+      enabled_in_release: false
+
+    auth:
+      type: Bearer
+      header: Authorization
+      token_refresh: true
+
+  cache:
+    enabled: true
+    size: 10MB
+    directory: cache/http
+
+  ssl:
+    pinning_enabled: true
+    pins:
+      - host: "api.example.com"
+        sha256: "sha256/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+
+# Retrofit Configuration
+retrofit:
+  base_url: "https://api.example.com/v1/"
+
+  converter:
+    type: gson
+    date_format: "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    serialize_nulls: false
+
+  call_adapter:
+    type: coroutines
+    error_handling: true
+
+# API Endpoint Patterns
+endpoints:
+  naming:
+    style: RESTful
+    versioning: URL  # URL, Header, Query
+
+  patterns:
+    list: "GET /resources"
+    detail: "GET /resources/{id}"
+    create: "POST /resources"
+    update: "PUT /resources/{id}"
+    partial: "PATCH /resources/{id}"
+    delete: "DELETE /resources/{id}"
+
+# Error Handling
+error_handling:
+  http_codes:
+    "400": "Bad Request - Invalid input"
+    "401": "Unauthorized - Need authentication"
+    "403": "Forbidden - No permission"
+    "404": "Not Found - Resource doesn't exist"
+    "422": "Validation Error"
+    "429": "Too Many Requests - Rate limited"
+    "500": "Server Error"
+    "503": "Service Unavailable"
+
+  retry:
+    enabled: true
+    max_attempts: 3
+    backoff_multiplier: 2.0
+    initial_delay: 1s
+    codes_to_retry: [408, 500, 502, 503, 504]
+
+# Response Models
+models:
+  wrapper:
+    success_field: "data"
+    error_field: "error"
+    message_field: "message"
+
+  pagination:
+    page_field: "page"
+    limit_field: "limit"
+    total_field: "total"
+    items_field: "items"
+
+# Security
+security:
+  certificate_transparency: true
+  hostname_verification: true
+  clear_text_traffic: false
+  network_security_config: true

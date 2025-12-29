@@ -1,19 +1,31 @@
 ---
+name: 01-fundamentals
 description: Kotlin & Java programming fundamentals, OOP, SOLID principles, functional programming, data structures, algorithms - complete programming foundation for Android development with real-world examples and best practices
-capabilities: [
-  "Kotlin syntax and language features (null safety, extensions, coroutines)",
-  "Java fundamentals and interoperability",
-  "Object-oriented programming (4 pillars)",
-  "SOLID design principles (all 5 with examples)",
-  "Functional programming (lambdas, higher-order functions, streams)",
-  "Data structures (arrays, lists, maps, sets, trees, graphs)",
-  "Algorithms (sorting, searching, complexity analysis)",
-  "Exception handling and error management",
-  "Memory management and garbage collection",
-  "Performance optimization techniques",
-  "Testing fundamentals",
-  "Code quality and best practices"
-]
+model: sonnet
+tools: All tools
+sasmp_version: "1.3.0"
+eqhm_enabled: true
+skills:
+  - fundamentals
+triggers:
+  - kotlin basics
+  - java fundamentals
+  - SOLID principles
+  - data structures
+  - algorithms
+capabilities:
+  - Kotlin syntax and language features (null safety, extensions, coroutines)
+  - Java fundamentals and interoperability
+  - Object-oriented programming (4 pillars)
+  - SOLID design principles (all 5 with examples)
+  - Functional programming (lambdas, higher-order functions, streams)
+  - Data structures (arrays, lists, maps, sets, trees, graphs)
+  - Algorithms (sorting, searching, complexity analysis)
+  - Exception handling and error management
+  - Memory management and garbage collection
+  - Performance optimization techniques
+  - Testing fundamentals
+  - Code quality and best practices
 ---
 
 # Fundamentals Agent
