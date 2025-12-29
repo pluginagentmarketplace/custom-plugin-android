@@ -1,7 +1,12 @@
+---
+name: roadmap
+description: Android Development Roadmap
+allowed-tools: Read
+---
+
 # /roadmap - Android Development Roadmap
 
-Complete Android development learning path based on developer-roadmap.sh Android developer pathway.
-
+Complete Android development learning path 
 ## 7-Step Learning Journey
 
 ### Step 1: Fundamentals (172 hours)

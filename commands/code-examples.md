@@ -1,3 +1,9 @@
+---
+name: code-examples
+description: examples - Real-World Code Examples
+allowed-tools: Read
+---
+
 # /code-examples - Real-World Code Examples
 
 Production-ready code examples for common Android development patterns and tasks.

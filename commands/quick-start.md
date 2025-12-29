@@ -1,3 +1,9 @@
+---
+name: quick-start
+description: start - Quick Start Guide
+allowed-tools: Read
+---
+
 # /quick-start - Quick Start Guide
 
 Essential resources and quick references for Android development.

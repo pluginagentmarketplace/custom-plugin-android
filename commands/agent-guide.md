@@ -1,3 +1,9 @@
+---
+name: agent-guide
+description: guide - Complete Agent Guide
+allowed-tools: Read
+---
+
 # /agent-guide - Complete Agent Guide
 
 Detailed guide to all 7 specialized agents in custom-plugin-android.

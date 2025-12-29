@@ -29,8 +29,7 @@ All notable changes to this project will be documented in this file.
 - 7 invokable skills
 - 3 interactive commands (/roadmap, /agent-guide, /quick-start)
 - 757+ hours of Android learning content
-- Based on developer-roadmap Android pathway
-
+- 
 ---
 
 **Format:** Based on [Keep a Changelog](https://keepachangelog.com/)

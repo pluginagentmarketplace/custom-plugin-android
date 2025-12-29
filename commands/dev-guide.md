@@ -1,3 +1,9 @@
+---
+name: dev-guide
+description: guide - Android Development Guide
+allowed-tools: Read
+---
+
 # /dev-guide - Android Development Guide
 
 Complete professional Android development guide covering best practices, patterns, and production workflows.

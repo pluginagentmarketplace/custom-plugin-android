@@ -1,3 +1,9 @@
+---
+name: quick-help
+description: help - Quick Help for Common Tasks
+allowed-tools: Read
+---
+
 # /quick-help - Quick Help for Common Tasks
 
 Fast reference for solving common Android development problems.
