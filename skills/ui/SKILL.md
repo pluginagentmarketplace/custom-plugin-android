@@ -1,9 +1,38 @@
 ---
 name: ui
-description: XML layouts, ConstraintLayout, Jetpack Compose, Material Design 3. Use when building user interfaces and designing layouts.
+description: XML layouts, ConstraintLayout, Jetpack Compose, Material Design 3.
+version: "2.0.0"
 sasmp_version: "1.3.0"
+
+# Agent Binding
 bonded_agent: 03-ui-development
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: UI design & implementation
+
+# Parameter Validation
+parameters:
+  paradigm:
+    type: string
+    enum: [xml, compose, both]
+    default: compose
+  design_system:
+    type: string
+    enum: [material2, material3]
+    default: material3
+
+# Retry Configuration
+retry:
+  max_attempts: 2
+  backoff: exponential
+  on_failure: return_basic_layout
+
+# Observability
+logging:
+  level: info
+  include: [query, ui_type, accessibility_check]
 ---
 
 # UI Design Skill

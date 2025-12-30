@@ -1,9 +1,37 @@
 ---
 name: platform
-description: Android core components lifecycle, Activities, Fragments, Services, Intent system. Use when working with Android components or handling lifecycle.
+description: Android core components lifecycle, Activities, Fragments, Services, Intent system.
+version: "2.0.0"
 sasmp_version: "1.3.0"
+
+# Agent Binding
 bonded_agent: 02-platform
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: Android platform components & lifecycle
+
+# Parameter Validation
+parameters:
+  component:
+    type: string
+    enum: [activity, fragment, service, intent, permission]
+    required: false
+  lifecycle_state:
+    type: string
+    required: false
+
+# Retry Configuration
+retry:
+  max_attempts: 2
+  backoff: exponential
+  on_failure: return_lifecycle_diagram
+
+# Observability
+logging:
+  level: info
+  include: [query, component_type, response_time]
 ---
 
 # Android Platform Skill

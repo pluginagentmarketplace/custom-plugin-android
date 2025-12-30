@@ -1,9 +1,38 @@
 ---
 name: networking
-description: Retrofit, OkHttp, REST APIs, JSON serialization, network security. Use when making HTTP requests and integrating APIs.
+description: Retrofit, OkHttp, REST APIs, JSON serialization, network security.
+version: "2.0.0"
 sasmp_version: "1.3.0"
+
+# Agent Binding
 bonded_agent: 05-networking
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: HTTP networking & API integration
+
+# Parameter Validation
+parameters:
+  api_type:
+    type: string
+    enum: [rest, graphql]
+    default: rest
+  concern:
+    type: string
+    enum: [setup, error_handling, security, caching]
+    required: false
+
+# Retry Configuration
+retry:
+  max_attempts: 3
+  backoff: exponential
+  on_failure: provide_fallback_pattern
+
+# Observability
+logging:
+  level: info
+  include: [api_endpoint, response_code, latency]
 ---
 
 # API Integration Skill

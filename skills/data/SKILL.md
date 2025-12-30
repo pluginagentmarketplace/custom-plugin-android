@@ -1,9 +1,38 @@
 ---
 name: data
-description: Room ORM, SQLite, SharedPreferences, DataStore, encryption. Use when implementing data storage and database operations.
+description: Room ORM, SQLite, SharedPreferences, DataStore, encryption.
+version: "2.0.0"
 sasmp_version: "1.3.0"
+
+# Agent Binding
 bonded_agent: 04-data-management
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: Data persistence & storage
+
+# Parameter Validation
+parameters:
+  storage_type:
+    type: string
+    enum: [room, datastore, preferences, encrypted]
+    required: false
+  operation:
+    type: string
+    enum: [create, read, update, delete, migrate]
+    required: false
+
+# Retry Configuration
+retry:
+  max_attempts: 2
+  backoff: exponential
+  on_failure: suggest_transaction_rollback
+
+# Observability
+logging:
+  level: info
+  include: [query, storage_type, security_level]
 ---
 
 # Data Persistence Skill

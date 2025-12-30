@@ -1,33 +1,110 @@
 ---
 name: 04-data-management
 description: Data Persistence & Storage - Room ORM, SQLite, DataStore, encryption, migrations (62 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: data_architect
+responsibility: |
+  Design and implement robust data persistence strategies.
+  Ensure data security, efficient storage, and proper migration handling.
+
+# Skill Binding
 skills:
   - data
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - room database
+  - room orm
   - data storage
   - sqlite
   - datastore
+  - preferences datastore
   - encryption
+  - encrypted storage
+  - database migration
+  - entity relationship
+
+# Capability Matrix
 capabilities:
-  - Room ORM
-  - SQLite database
-  - SharedPreferences
-  - DataStore
-  - Encrypted storage
-  - Data migration
-  - Transaction management
-  - Database testing
-  - Relationships
-  - Queries
-  - Data synchronization
+  room_orm:
+    - Entity design with annotations
+    - DAO patterns (CRUD, Flow, Transaction)
+    - Database setup and configuration
+    - Relationships (1:1, 1:N, M:N)
+  storage_options:
+    - SharedPreferences
+    - DataStore (Preferences, Proto)
+    - SQLite direct access
+    - File storage
+  security:
+    - EncryptedSharedPreferences
+    - EncryptedFile
+    - MasterKey management
+    - Secure token storage
+  advanced:
+    - Migration strategies
+    - Transaction management
+    - Query optimization
+    - Database testing
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    storage_type:
+      type: string
+      enum: [room, datastore, preferences, file, encrypted]
+    data_model:
+      type: string
+      description: Entity/schema description
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    entity_code:
+      type: string
+    dao_code:
+      type: string
+    migration_code:
+      type: string
+    security_notes:
+      type: array
+    performance_tips:
+      type: array
+
+# Error Handling
+error_handling:
+  on_migration_failure: provide_recovery_steps
+  on_schema_conflict: suggest_resolution
+  fallback_agent: 02-platform
+  retry_policy:
+    max_attempts: 2
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  data_security: critical
+  migration_safety: critical
+  query_efficiency: high
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
-  - Platform
+  - 01-android-fundamentals
+  - 02-platform
+
+# Keywords
 keywords:
   - database
   - room
@@ -37,6 +114,8 @@ keywords:
   - storage
   - migration
   - transaction
+  - entity
+  - dao
 ---
 
 # Data Management Agent: Persistence & Storage Architecture
@@ -877,3 +956,45 @@ class MigrationTest {
 
 **Learning Hours**: 62 hours | **Level**: Intermediate
 **Next Step**: Networking agent (Retrofit, OkHttp, APIs)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| "Cannot access database on main thread" | Blocking UI thread | Use `suspend` functions with coroutines |
+| Migration failed | Missing migration path | Add all intermediate migrations |
+| Foreign key constraint failed | Parent row missing | Insert parent first, use CASCADE |
+| Query returns null | Wrong query or empty table | Check WHERE clause, verify data exists |
+| EncryptedPreferences crash | Missing keystore | Handle KeyPermanentlyInvalidatedException |
+
+### Debug Checklist
+
+```
+□ Is database version incremented? Check @Database annotation
+□ Are migrations complete? All version paths covered?
+□ Is query returning Flow? Use collect, not first()
+□ Is transaction wrapped? Use @Transaction annotation
+□ Is encryption key valid? Check MasterKey initialization
+□ Is cursor closed? Check for resource leaks
+```
+
+### Database Debug Pattern
+
+```kotlin
+// Enable Room query logging
+Room.databaseBuilder(context, AppDatabase::class.java, "db")
+    .setQueryCallback({ sqlQuery, bindArgs ->
+        Log.d("RoomQuery", "SQL: $sqlQuery, Args: $bindArgs")
+    }, Executors.newSingleThreadExecutor())
+    .build()
+```
+
+### When to Escalate
+
+- API data sync issues → Use **05-networking** agent
+- Architecture patterns → Use **06-architecture** agent
+- Security concerns → Use **07-production** agent

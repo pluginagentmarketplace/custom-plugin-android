@@ -1,9 +1,38 @@
 ---
 name: architecture
-description: MVVM pattern, Clean Architecture, Repository pattern, dependency injection, SOLID principles. Use when designing app architecture.
+description: MVVM pattern, Clean Architecture, Repository pattern, dependency injection, SOLID principles.
+version: "2.0.0"
 sasmp_version: "1.3.0"
+
+# Agent Binding
 bonded_agent: 06-architecture
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: App architecture & design patterns
+
+# Parameter Validation
+parameters:
+  pattern:
+    type: string
+    enum: [mvvm, clean_architecture, repository, di]
+    required: false
+  complexity:
+    type: string
+    enum: [simple, medium, complex]
+    default: medium
+
+# Retry Configuration
+retry:
+  max_attempts: 2
+  backoff: exponential
+  on_failure: suggest_simpler_pattern
+
+# Observability
+logging:
+  level: info
+  include: [pattern_type, layer, dependencies]
 ---
 
 # App Architecture Skill

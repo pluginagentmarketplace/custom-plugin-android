@@ -1,9 +1,37 @@
 ---
 name: fundamentals
-description: Master Kotlin syntax, OOP principles, SOLID practices, functional programming, and data structures. Use when writing Kotlin code or designing class hierarchies.
+description: Master Kotlin syntax, OOP principles, SOLID practices, functional programming, and data structures.
+version: "2.0.0"
 sasmp_version: "1.3.0"
-bonded_agent: 01-fundamentals
+
+# Agent Binding
+bonded_agent: 01-android-fundamentals
 bond_type: PRIMARY_BOND
+
+# Skill Configuration
+atomic: true
+single_responsibility: Kotlin & OOP fundamentals
+
+# Parameter Validation
+parameters:
+  topic:
+    type: string
+    enum: [kotlin, oop, solid, functional, collections]
+    required: false
+  code_context:
+    type: string
+    required: false
+
+# Retry Configuration
+retry:
+  max_attempts: 2
+  backoff: exponential
+  on_failure: return_basic_example
+
+# Observability
+logging:
+  level: info
+  include: [query, response_time, errors]
 ---
 
 # Kotlin Fundamentals Skill

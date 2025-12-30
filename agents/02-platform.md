@@ -1,31 +1,100 @@
 ---
 name: 02-platform
-description: Android core components - Activities, Fragments, Services, Lifecycle, Intent system, Permissions - Android platform fundamentals (78 hours)
+description: Android core components - Activities, Fragments, Services, Lifecycle, Intent system, Permissions (78 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: platform_specialist
+responsibility: |
+  Teach Android platform components, lifecycle management, and system interactions.
+  This agent bridges fundamentals with UI development.
+
+# Skill Binding
 skills:
   - platform
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - activity lifecycle
-  - fragment
-  - service
-  - intent
+  - fragment management
+  - service implementation
+  - intent system
   - permissions
+  - broadcast receiver
+  - content provider
+  - configuration change
+  - back stack
+
+# Capability Matrix
 capabilities:
-  - Activity lifecycle management
-  - Fragment framework
-  - Service implementation
-  - Intent system
-  - BroadcastReceiver
-  - ContentProvider
-  - Permissions handling
-  - Process lifecycle
-  - Configuration changes
-  - Back stack management
+  components:
+    - Activity lifecycle (6 states)
+    - Fragment lifecycle (10 callbacks)
+    - Service types (Started, Bound, Foreground)
+    - BroadcastReceiver patterns
+  communication:
+    - Intent system (Explicit/Implicit)
+    - Bundle data passing
+    - Activity results
+    - Deep linking
+  system:
+    - Permissions (Normal/Dangerous)
+    - Process priority
+    - Configuration changes
+    - State restoration
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    component_type:
+      type: string
+      enum: [activity, fragment, service, intent, permission]
+    code_context:
+      type: string
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    lifecycle_diagram:
+      type: string
+    code_example:
+      type: string
+    best_practices:
+      type: array
+    common_mistakes:
+      type: array
+
+# Error Handling
+error_handling:
+  on_lifecycle_confusion: provide_diagram
+  on_component_mismatch: clarify_use_case
+  fallback_agent: 01-android-fundamentals
+  retry_policy:
+    max_attempts: 2
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  lifecycle_accuracy: critical
+  code_examples: required
+  platform_version_awareness: required
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
+  - 01-android-fundamentals
+
+# Keywords
 keywords:
   - activity
   - fragment
@@ -35,6 +104,7 @@ keywords:
   - permission
   - broadcast
   - content provider
+  - platform
 ---
 
 # Platform Agent: Android Core Components & Lifecycle Management
@@ -927,3 +997,48 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 **Learning Hours**: 78 hours | **Level**: Beginner to Intermediate
 **Next Step**: UI Development agent (Layouts, Compose, Material Design)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Activity recreated on rotation | Configuration change | Use ViewModel or `onSaveInstanceState` |
+| Fragment not attached | Async callback after detach | Check `isAdded` before UI updates |
+| Service killed by system | Low process priority | Use Foreground Service with notification |
+| Permission denied crash | Missing runtime check | Always check permission before use |
+| Memory leak from Context | Static reference | Use ApplicationContext or WeakReference |
+
+### Debug Checklist
+
+```
+□ Is lifecycle callback order correct? Add Logcat logs
+□ Is ViewModel surviving rotation? Check instance hash
+□ Is Fragment attached? Check isAdded before UI ops
+□ Is Service running? Check via adb shell dumpsys activity services
+□ Is permission granted? Check ContextCompat.checkSelfPermission
+□ Are receivers unregistered? Check onDestroy cleanup
+```
+
+### Lifecycle Debug Pattern
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    Log.d(TAG, "onCreate - savedState: ${savedInstanceState != null}")
+}
+
+override fun onDestroy() {
+    Log.d(TAG, "onDestroy - isFinishing: $isFinishing")
+    super.onDestroy()
+}
+```
+
+### When to Escalate
+
+- UI rendering issues → Use **03-ui-development** agent
+- Database/storage problems → Use **04-data-management** agent
+- Architecture decisions → Use **06-architecture** agent

@@ -1,34 +1,113 @@
 ---
 name: 05-networking
 description: API Integration & Networking - Retrofit, OkHttp, REST APIs, JSON, interceptors, SSL pinning (75 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: network_engineer
+responsibility: |
+  Design and implement robust HTTP networking with Retrofit and OkHttp.
+  Ensure secure, resilient, and efficient API communication.
+
+# Skill Binding
 skills:
   - networking
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - retrofit
   - okhttp
   - REST API
   - network call
   - json parsing
+  - api integration
+  - http request
+  - ssl pinning
+  - interceptor
+  - authentication token
+
+# Capability Matrix
 capabilities:
-  - Retrofit API client
-  - OkHttp networking
-  - REST API design
-  - JSON serialization
-  - Interceptors
-  - Error handling
-  - Retry logic
-  - SSL pinning
-  - Network monitoring
-  - Authentication
-  - Request/Response handling
+  retrofit:
+    - API interface definition
+    - Suspend function support
+    - Type-safe responses
+    - Multipart uploads
+  okhttp:
+    - Interceptors (logging, auth, retry)
+    - Connection management
+    - Caching strategies
+    - Certificate pinning
+  patterns:
+    - Result wrapper pattern
+    - Error handling
+    - Retry with exponential backoff
+    - Token refresh
+  security:
+    - HTTPS enforcement
+    - SSL/TLS pinning
+    - Secure token storage
+    - Request signing
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    api_type:
+      type: string
+      enum: [rest, graphql]
+      default: rest
+    concern:
+      type: string
+      enum: [setup, error_handling, security, performance]
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    api_interface:
+      type: string
+    okhttp_config:
+      type: string
+    error_handling:
+      type: string
+    security_notes:
+      type: array
+    performance_tips:
+      type: array
+
+# Error Handling
+error_handling:
+  on_network_failure: provide_retry_pattern
+  on_auth_failure: suggest_token_refresh
+  on_ssl_error: explain_pinning
+  fallback_agent: 04-data-management
+  retry_policy:
+    max_attempts: 3
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  security_compliance: critical
+  error_handling: required
+  performance_awareness: high
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
-  - Platform
-  - Data Management
+  - 01-android-fundamentals
+  - 02-platform
+  - 04-data-management
+
+# Keywords
 keywords:
   - retrofit
   - okhttp
@@ -733,3 +812,47 @@ class UserViewModel @Inject constructor(
 
 **Learning Hours**: 75 hours | **Level**: Intermediate
 **Next Step**: Architecture agent (MVVM, Clean Architecture)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| `SocketTimeoutException` | Server slow or unreachable | Increase timeout, add retry logic |
+| `SSLHandshakeException` | Certificate mismatch | Update pinned certificates |
+| `JsonSyntaxException` | Response format changed | Check API contract, update model |
+| 401 Unauthorized | Token expired | Implement token refresh interceptor |
+| 403 Forbidden | Missing permissions | Check API key and scopes |
+
+### Debug Checklist
+
+```
+□ Is network available? Check connectivity first
+□ Is base URL correct? HTTPS vs HTTP, trailing slash
+□ Are headers set? Check auth token, content-type
+□ Is response format correct? Validate JSON structure
+□ Is certificate pinned correctly? Verify SHA256 hash
+□ Is retry logic working? Check interceptor chain
+```
+
+### Network Debug Pattern
+
+```kotlin
+// Add logging interceptor for debugging
+val loggingInterceptor = HttpLoggingInterceptor().apply {
+    level = HttpLoggingInterceptor.Level.BODY
+}
+
+val client = OkHttpClient.Builder()
+    .addInterceptor(loggingInterceptor)
+    .build()
+```
+
+### When to Escalate
+
+- Data persistence → Use **04-data-management** agent
+- App architecture → Use **06-architecture** agent
+- Security audit → Use **07-production** agent

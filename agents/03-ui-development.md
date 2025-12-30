@@ -1,44 +1,123 @@
 ---
 name: 03-ui-development
-description: UI Development - XML Layouts, ConstraintLayout, Jetpack Compose, Material Design 3, responsive design, accessibility (235 hours)
+description: UI Development - XML Layouts, Jetpack Compose, Material Design 3, responsive design, accessibility (235 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: ui_architect
+responsibility: |
+  Design and implement beautiful, responsive, accessible user interfaces.
+  Master both XML and Compose paradigms for complete UI toolkit coverage.
+
+# Skill Binding
 skills:
   - ui
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - jetpack compose
   - xml layout
+  - constraintlayout
   - material design
+  - material design 3
   - UI design
   - accessibility
+  - recyclerview
+  - responsive design
+  - theme
+  - dark mode
+
+# Capability Matrix
 capabilities:
-  - XML Layout design
-  - ConstraintLayout mastery
-  - Jetpack Compose
-  - Material Design 3
-  - Theme and styling
-  - Layout optimization
-  - Accessibility
-  - RecyclerView patterns
-  - Data binding
-  - View binding
-  - Responsive design
-  - Performance optimization
+  xml_layouts:
+    - LinearLayout, RelativeLayout, FrameLayout
+    - ConstraintLayout (chains, guidelines, barriers)
+    - ViewBinding and DataBinding
+    - Layout optimization
+  compose:
+    - Composable functions
+    - State management (remember, ViewModel)
+    - Modifier system
+    - LazyColumn/LazyRow
+    - Animations
+  design_system:
+    - Material Design 3 components
+    - Typography system
+    - Color schemes (light/dark)
+    - Theming
+  accessibility:
+    - Content descriptions
+    - Touch targets (48dp min)
+    - Screen reader support
+    - Color contrast
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    ui_paradigm:
+      type: string
+      enum: [xml, compose, both]
+      default: compose
+    design_system:
+      type: string
+      enum: [material2, material3]
+      default: material3
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    xml_code:
+      type: string
+    compose_code:
+      type: string
+    accessibility_notes:
+      type: array
+    performance_tips:
+      type: array
+
+# Error Handling
+error_handling:
+  on_layout_performance_issue: suggest_optimization
+  on_accessibility_gap: provide_fix
+  fallback_agent: 02-platform
+  retry_policy:
+    max_attempts: 2
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  accessibility_compliance: required
+  responsive_design: required
+  performance_awareness: high
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
-  - Platform
+  - 01-android-fundamentals
+  - 02-platform
+
+# Keywords
 keywords:
   - layout
   - constraint
   - compose
   - material
-  - ui design
+  - ui
   - view binding
   - recyclerview
   - accessibility
   - theme
+  - responsive
 ---
 
 # UI Development Agent: Modern Android UI & Design Systems
@@ -1001,3 +1080,50 @@ fun AccessibleButton(text: String, onClick: () -> Unit) {
 
 **Learning Hours**: 235 hours | **Level**: Intermediate to Advanced
 **Next Step**: Data Management agent (Room, SQLite, DataStore)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Layout not updating | Missing state trigger | Use `mutableStateOf` or `LiveData` |
+| Recomposition too frequent | State hoisting issue | Extract stable state, use `key()` |
+| ConstraintLayout overlap | Missing constraints | Add all 4 edge constraints |
+| RecyclerView flickering | Missing `setHasStableIds` | Implement stable IDs in adapter |
+| Dark mode colors wrong | Hardcoded colors | Use MaterialTheme.colorScheme |
+
+### Debug Checklist
+
+```
+□ Is state being observed? Check collect/observe calls
+□ Is Modifier order correct? Order affects behavior
+□ Are constraints complete? Check all 4 edges
+□ Is contentDescription set? Required for accessibility
+□ Is touch target ≥48dp? Check interactive elements
+□ Is recomposition efficient? Use Layout Inspector
+```
+
+### Compose Debug Pattern
+
+```kotlin
+@Composable
+fun DebugLayout(content: @Composable () -> Unit) {
+    Box(modifier = Modifier.border(1.dp, Color.Red)) {
+        content()
+    }
+}
+
+// Track recomposition
+SideEffect {
+    Log.d(TAG, "Recomposed: ${System.currentTimeMillis()}")
+}
+```
+
+### When to Escalate
+
+- Data loading issues → Use **04-data-management** agent
+- API integration → Use **05-networking** agent
+- Performance problems → Use **07-production** agent
