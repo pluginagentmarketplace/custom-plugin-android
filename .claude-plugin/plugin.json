@@ -1,7 +1,7 @@
 {
   "name": "android-development-assistant",
-  "version": "2.0.0",
-  "description": "Professional Android development plugin with 7 agents and 7 skills covering Kotlin, Jetpack Compose, MVVM architecture, and production-ready development",
+  "version": "2.1.0",
+  "description": "Production-grade Android development plugin with 7 agents and 7 skills covering Kotlin, Jetpack Compose, MVVM architecture, and production-ready development. SASMP 1.3.0 compliant with EQHM quality gates.",
   "author": {
     "name": "Dr. Umit Kacar & Muhsin Elcicek",
     "email": "kacarumit.phd@gmail.com",
@@ -10,44 +10,38 @@
   "homepage": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "license": "SEE LICENSE IN LICENSE",
+  "sasmp_version": "1.3.0",
+  "eqhm_enabled": true,
   "keywords": [
     "android",
     "kotlin",
     "jetpack-compose",
     "mvvm",
-    "mobile",
+    "clean-architecture",
     "room",
     "retrofit",
     "material-design",
+    "production-grade",
     "claude-code",
     "plugin"
   ],
   "agents": [
     "./agents/01-android-fundamentals.md",
-    "./agents/01-kotlin-essentials.md",
-    "./agents/02-android-architecture.md",
     "./agents/02-platform.md",
-    "./agents/03-jetpack-modern.md",
     "./agents/03-ui-development.md",
-    "./agents/04-architecture-solid.md",
     "./agents/04-data-management.md",
     "./agents/05-networking.md",
     "./agents/06-architecture.md",
-    "./agents/07-production.md",
-    "./agents/data-management-storage.md"
+    "./agents/07-production.md"
   ],
   "skills": [
-    "./skills/01-kotlin-core/SKILL.md",
-    "./skills/02-jetpack-essential/SKILL.md",
-    "./skills/03-architecture-patterns/SKILL.md",
-    "./skills/04-android-production/SKILL.md",
-    "./skills/architecture/SKILL.md",
-    "./skills/data/SKILL.md",
     "./skills/fundamentals/SKILL.md",
-    "./skills/networking/SKILL.md",
     "./skills/platform/SKILL.md",
-    "./skills/production/SKILL.md",
-    "./skills/ui/SKILL.md"
+    "./skills/ui/SKILL.md",
+    "./skills/data/SKILL.md",
+    "./skills/networking/SKILL.md",
+    "./skills/architecture/SKILL.md",
+    "./skills/production/SKILL.md"
   ],
   "commands": [
     "./commands/agent-guide.md",
@@ -57,5 +51,28 @@
     "./commands/quick-start.md",
     "./commands/roadmap.md"
   ],
-  "hooks": "./hooks/hooks.json"
+  "hooks": "./hooks/hooks.json",
+  "integrity": {
+    "agent_skill_bonds": {
+      "01-android-fundamentals": "fundamentals",
+      "02-platform": "platform",
+      "03-ui-development": "ui",
+      "04-data-management": "data",
+      "05-networking": "networking",
+      "06-architecture": "architecture",
+      "07-production": "production"
+    },
+    "dependency_graph": {
+      "01-android-fundamentals": [],
+      "02-platform": ["01-android-fundamentals"],
+      "03-ui-development": ["01-android-fundamentals", "02-platform"],
+      "04-data-management": ["01-android-fundamentals", "02-platform"],
+      "05-networking": ["01-android-fundamentals", "02-platform", "04-data-management"],
+      "06-architecture": ["01-android-fundamentals", "02-platform", "04-data-management", "05-networking"],
+      "07-production": ["01-android-fundamentals", "02-platform", "04-data-management", "05-networking", "06-architecture"]
+    },
+    "orphan_skills": [],
+    "ghost_triggers": [],
+    "circular_dependencies": false
+  }
 }

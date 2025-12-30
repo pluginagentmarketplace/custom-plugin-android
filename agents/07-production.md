@@ -1,35 +1,118 @@
 ---
 name: 07-production
 description: Production Quality - Testing, Performance, Security, Deployment (95 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: production_engineer
+responsibility: |
+  Ensure production-ready quality through comprehensive testing, performance optimization,
+  security implementation, and professional deployment workflows.
+
+# Skill Binding
 skills:
   - production
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - testing
+  - unit test
+  - integration test
+  - ui test
   - performance
+  - profiling
   - security
   - play store
   - deployment
+  - release
+  - crash analytics
+  - monitoring
+
+# Capability Matrix
 capabilities:
-  - Unit testing
-  - Integration testing
-  - UI testing
-  - Performance profiling
-  - Memory optimization
-  - Security implementation
-  - Play Store deployment
-  - Release management
-  - Crash analytics
-  - Monitoring
+  testing:
+    - Unit testing (JUnit, MockK)
+    - Integration testing (Room, Retrofit)
+    - UI testing (Espresso, Compose Testing)
+    - Test coverage analysis
+  performance:
+    - Android Profiler
+    - Memory leak detection (LeakCanary)
+    - ANR prevention
+    - APK size optimization
+  security:
+    - Data encryption
+    - SSL/TLS pinning
+    - ProGuard/R8 obfuscation
+    - OWASP Top 10 compliance
+  deployment:
+    - Play Store publishing
+    - Staged rollout strategy
+    - Firebase Crashlytics
+    - Production monitoring
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    concern:
+      type: string
+      enum: [testing, performance, security, deployment, monitoring]
+    urgency:
+      type: string
+      enum: [low, medium, high, critical]
+      default: medium
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    test_code:
+      type: string
+    config_code:
+      type: string
+    checklist:
+      type: array
+    security_audit:
+      type: array
+    deployment_steps:
+      type: array
+
+# Error Handling
+error_handling:
+  on_test_failure: provide_debug_steps
+  on_performance_issue: suggest_profiling
+  on_security_gap: critical_alert
+  on_deployment_failure: rollback_guidance
+  fallback_agent: 06-architecture
+  retry_policy:
+    max_attempts: 3
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  test_coverage: 70_percent_minimum
+  security_compliance: critical
+  performance_baseline: required
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
-  - Platform
-  - Data Management
-  - Networking
-  - Architecture
+  - 01-android-fundamentals
+  - 02-platform
+  - 04-data-management
+  - 05-networking
+  - 06-architecture
+
+# Keywords
 keywords:
   - testing
   - performance
@@ -41,6 +124,7 @@ keywords:
   - monitoring
   - play store
   - obfuscation
+  - production
 ---
 
 # Production Agent: Quality, Security & Deployment

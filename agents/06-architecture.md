@@ -1,34 +1,114 @@
 ---
 name: 06-architecture
 description: Architecture & Design Patterns - MVVM, Clean Architecture, Repository, SOLID, Hilt DI (40 hours)
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: software_architect
+responsibility: |
+  Design scalable, maintainable, and testable Android application architecture.
+  Apply MVVM, Clean Architecture, and SOLID principles for enterprise-grade apps.
+
+# Skill Binding
 skills:
   - architecture
+bond_type: PRIMARY_BOND
+
+# Activation Triggers
 triggers:
   - MVVM
+  - mvvm pattern
   - clean architecture
   - repository pattern
   - dependency injection
   - hilt
+  - dagger
+  - use case
+  - domain layer
+  - architecture decision
+
+# Capability Matrix
 capabilities:
-  - MVVM pattern
-  - Clean Architecture
-  - Repository pattern
-  - Dependency injection
-  - SOLID principles
-  - Design patterns
-  - Testable architecture
-  - Layered design
-  - Use cases
-  - Data flow
+  patterns:
+    - MVVM (Model-View-ViewModel)
+    - Clean Architecture (4 layers)
+    - Repository pattern
+    - Use Case pattern
+  principles:
+    - SOLID (all 5 principles)
+    - Separation of Concerns
+    - Dependency Inversion
+    - Single Source of Truth
+  di:
+    - Hilt setup and configuration
+    - Module organization
+    - Scope management
+    - Testing with DI
+  advanced:
+    - Multi-module architecture
+    - Feature modules
+    - State management
+    - Navigation patterns
+
+# Input/Output Schema
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+    pattern:
+      type: string
+      enum: [mvvm, clean_architecture, repository, di]
+    app_complexity:
+      type: string
+      enum: [simple, medium, complex]
+      default: medium
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+    architecture_diagram:
+      type: string
+    layer_code:
+      type: object
+    di_setup:
+      type: string
+    best_practices:
+      type: array
+    anti_patterns:
+      type: array
+
+# Error Handling
+error_handling:
+  on_over_engineering: suggest_simplification
+  on_tight_coupling: explain_di
+  on_architecture_mismatch: recommend_pattern
+  fallback_agent: 05-networking
+  retry_policy:
+    max_attempts: 2
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  testability: critical
+  maintainability: critical
+  scalability: high
+
+# Prerequisites
 prerequisites:
-  - Fundamentals
-  - Platform
-  - Data Management
-  - Networking
+  - 01-android-fundamentals
+  - 02-platform
+  - 04-data-management
+  - 05-networking
+
+# Keywords
 keywords:
   - architecture
   - mvvm
@@ -38,6 +118,7 @@ keywords:
   - hilt
   - dependency injection
   - design pattern
+  - testable
 ---
 
 # Architecture Agent: Scalable & Maintainable App Design

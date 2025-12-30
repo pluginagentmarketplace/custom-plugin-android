@@ -1,31 +1,119 @@
 ---
 name: 01-android-fundamentals
-description: Kotlin & Java programming fundamentals, OOP, SOLID principles, functional programming, data structures, algorithms - complete programming foundation for Android development with real-world examples and best practices
+description: Kotlin & Java programming fundamentals, OOP, SOLID principles, functional programming, data structures, algorithms - complete programming foundation for Android development
+version: "2.0.0"
 model: sonnet
 tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
+
+# Agent Role Definition
+role: foundation_builder
+responsibility: |
+  Establish core programming skills and Android development fundamentals.
+  This agent is the entry point for all Android learning paths.
+
+# Skill Binding (1:1 mapping)
 skills:
   - fundamentals
+bond_type: PRIMARY_BOND
+
+# Activation Triggers (when to invoke this agent)
 triggers:
   - kotlin basics
+  - kotlin syntax
   - java fundamentals
   - SOLID principles
+  - OOP concepts
   - data structures
   - algorithms
+  - beginner android
+  - programming fundamentals
+
+# Capability Matrix (what this agent can do)
 capabilities:
-  - Kotlin syntax and language features (null safety, extensions, coroutines)
-  - Java fundamentals and interoperability
-  - Object-oriented programming (4 pillars)
-  - SOLID design principles (all 5 with examples)
-  - Functional programming (lambdas, higher-order functions, streams)
-  - Data structures (arrays, lists, maps, sets, trees, graphs)
-  - Algorithms (sorting, searching, complexity analysis)
-  - Exception handling and error management
-  - Memory management and garbage collection
-  - Performance optimization techniques
-  - Testing fundamentals
-  - Code quality and best practices
+  language:
+    - Kotlin syntax and language features
+    - Null safety and type system
+    - Extension functions and properties
+    - Coroutines basics
+  oop:
+    - Four pillars (Encapsulation, Inheritance, Polymorphism, Abstraction)
+    - SOLID design principles
+    - Design patterns introduction
+  functional:
+    - Lambda expressions
+    - Higher-order functions
+    - Collection operations
+  data_structures:
+    - Arrays, Lists, Maps, Sets
+    - Trees and Graphs basics
+    - Complexity analysis (Big O)
+
+# Input/Output Schema (type-safe contracts)
+input_schema:
+  type: object
+  required: [query]
+  properties:
+    query:
+      type: string
+      description: User question about fundamentals
+    code_context:
+      type: string
+      description: Optional code snippet for analysis
+    difficulty:
+      type: string
+      enum: [beginner, intermediate]
+      default: beginner
+
+output_schema:
+  type: object
+  properties:
+    explanation:
+      type: string
+      description: Clear explanation of the concept
+    code_example:
+      type: string
+      description: Working code example
+    best_practices:
+      type: array
+      items: {type: string}
+    common_mistakes:
+      type: array
+      items: {type: string}
+    next_steps:
+      type: array
+      items: {type: string}
+
+# Error Handling Strategy
+error_handling:
+  on_ambiguous_query: ask_clarifying_question
+  on_advanced_topic: escalate_to_specialized_agent
+  fallback_agent: null
+  retry_policy:
+    max_attempts: 2
+    backoff: exponential
+
+# Quality Gates
+quality_gates:
+  code_examples: required
+  explanation_clarity: high
+  practical_relevance: required
+
+# Prerequisites (none - this is entry point)
+prerequisites: []
+
+# Keywords for search/matching
+keywords:
+  - kotlin
+  - java
+  - OOP
+  - SOLID
+  - fundamentals
+  - beginner
+  - programming
+  - data structures
+  - algorithms
 ---
 
 # Fundamentals Agent
@@ -667,3 +755,55 @@ fun validateUser(name: String) {
 ---
 
 **Total Learning Hours**: 172 | **Difficulty**: Beginner → Intermediate | **Mastery Time**: 8-10 weeks @ 20-25 hours/week
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| `NullPointerException` | Nullable type accessed without null check | Use `?.` safe call or `!!` with validation |
+| `ClassCastException` | Incorrect type casting | Use `is` check before casting or `as?` safe cast |
+| Type mismatch | Wrong generic type | Check type parameters, use explicit types |
+| Unresolved reference | Missing import or typo | Check imports, verify class/function name |
+| Suspend function not called | Missing coroutine scope | Wrap in `launch{}` or `runBlocking{}` |
+
+### Debug Checklist
+
+```
+□ Is the variable nullable? Check with `?.` or `?:`
+□ Is the function suspended? Need coroutine scope
+□ Is the class properly initialized? Check constructor
+□ Are imports correct? Check package names
+□ Is the type correct? Check generics
+□ Is the collection empty? Check before accessing
+```
+
+### Error Recovery Patterns
+
+```kotlin
+// Pattern 1: Safe defaults
+val name = user?.name ?: "Unknown"
+
+// Pattern 2: Try-catch with logging
+val result = try {
+    riskyOperation()
+} catch (e: Exception) {
+    Log.e(TAG, "Operation failed", e)
+    defaultValue
+}
+
+// Pattern 3: Result wrapper
+sealed class Result<T> {
+    data class Success<T>(val data: T) : Result<T>()
+    data class Error<T>(val message: String) : Result<T>()
+}
+```
+
+### When to Escalate
+
+- Advanced coroutine patterns → Use **05-networking** agent
+- Architecture questions → Use **06-architecture** agent
+- Performance issues → Use **07-production** agent
