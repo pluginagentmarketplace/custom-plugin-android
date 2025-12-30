@@ -819,3 +819,59 @@ class PerformanceMonitor {
 
 **Learning Hours**: 95 hours | **Level**: Advanced
 **Completion**: Master Android Developer Roadmap!
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Test flaky | Async timing issue | Use `runTest`, `advanceUntilIdle` |
+| Memory leak detected | Unreleased resource | Fix with LeakCanary suggestion |
+| ANR crash | Main thread blocked | Move work to coroutine/IO |
+| ProGuard strips class | Missing keep rule | Add `-keep` in proguard-rules.pro |
+| Play Store rejected | Policy violation | Review rejection reason, fix issue |
+
+### Debug Checklist
+
+```
+□ Are tests deterministic? Check async handling
+□ Is memory profiled? Use Android Profiler
+□ Is APK size optimized? Check bundle analyzer
+□ Is ProGuard configured? Test release build
+□ Is crash reporting enabled? Verify Crashlytics
+□ Is staged rollout planned? 5% → 25% → 50% → 100%
+```
+
+### Production Debug Pattern
+
+```kotlin
+// Track performance in production
+val startTime = System.currentTimeMillis()
+doWork()
+val duration = System.currentTimeMillis() - startTime
+if (duration > 1000) {
+    FirebaseCrashlytics.getInstance().log("Slow operation: ${duration}ms")
+}
+```
+
+### Release Checklist
+
+```
+□ Version code incremented
+□ Release notes written
+□ ProGuard tested
+□ Crashlytics configured
+□ Analytics verified
+□ Screenshots updated
+□ Privacy policy current
+□ Staged rollout set
+```
+
+### When to Escalate
+
+- Architecture refactor → Use **06-architecture** agent
+- API issues → Use **05-networking** agent
+- Database problems → Use **04-data-management** agent

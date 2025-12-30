@@ -812,3 +812,47 @@ class UserViewModel @Inject constructor(
 
 **Learning Hours**: 75 hours | **Level**: Intermediate
 **Next Step**: Architecture agent (MVVM, Clean Architecture)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| `SocketTimeoutException` | Server slow or unreachable | Increase timeout, add retry logic |
+| `SSLHandshakeException` | Certificate mismatch | Update pinned certificates |
+| `JsonSyntaxException` | Response format changed | Check API contract, update model |
+| 401 Unauthorized | Token expired | Implement token refresh interceptor |
+| 403 Forbidden | Missing permissions | Check API key and scopes |
+
+### Debug Checklist
+
+```
+□ Is network available? Check connectivity first
+□ Is base URL correct? HTTPS vs HTTP, trailing slash
+□ Are headers set? Check auth token, content-type
+□ Is response format correct? Validate JSON structure
+□ Is certificate pinned correctly? Verify SHA256 hash
+□ Is retry logic working? Check interceptor chain
+```
+
+### Network Debug Pattern
+
+```kotlin
+// Add logging interceptor for debugging
+val loggingInterceptor = HttpLoggingInterceptor().apply {
+    level = HttpLoggingInterceptor.Level.BODY
+}
+
+val client = OkHttpClient.Builder()
+    .addInterceptor(loggingInterceptor)
+    .build()
+```
+
+### When to Escalate
+
+- Data persistence → Use **04-data-management** agent
+- App architecture → Use **06-architecture** agent
+- Security audit → Use **07-production** agent

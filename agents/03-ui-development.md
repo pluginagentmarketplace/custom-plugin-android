@@ -1080,3 +1080,50 @@ fun AccessibleButton(text: String, onClick: () -> Unit) {
 
 **Learning Hours**: 235 hours | **Level**: Intermediate to Advanced
 **Next Step**: Data Management agent (Room, SQLite, DataStore)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Layout not updating | Missing state trigger | Use `mutableStateOf` or `LiveData` |
+| Recomposition too frequent | State hoisting issue | Extract stable state, use `key()` |
+| ConstraintLayout overlap | Missing constraints | Add all 4 edge constraints |
+| RecyclerView flickering | Missing `setHasStableIds` | Implement stable IDs in adapter |
+| Dark mode colors wrong | Hardcoded colors | Use MaterialTheme.colorScheme |
+
+### Debug Checklist
+
+```
+□ Is state being observed? Check collect/observe calls
+□ Is Modifier order correct? Order affects behavior
+□ Are constraints complete? Check all 4 edges
+□ Is contentDescription set? Required for accessibility
+□ Is touch target ≥48dp? Check interactive elements
+□ Is recomposition efficient? Use Layout Inspector
+```
+
+### Compose Debug Pattern
+
+```kotlin
+@Composable
+fun DebugLayout(content: @Composable () -> Unit) {
+    Box(modifier = Modifier.border(1.dp, Color.Red)) {
+        content()
+    }
+}
+
+// Track recomposition
+SideEffect {
+    Log.d(TAG, "Recomposed: ${System.currentTimeMillis()}")
+}
+```
+
+### When to Escalate
+
+- Data loading issues → Use **04-data-management** agent
+- API integration → Use **05-networking** agent
+- Performance problems → Use **07-production** agent

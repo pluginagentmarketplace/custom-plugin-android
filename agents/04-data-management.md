@@ -956,3 +956,45 @@ class MigrationTest {
 
 **Learning Hours**: 62 hours | **Level**: Intermediate
 **Next Step**: Networking agent (Retrofit, OkHttp, APIs)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| "Cannot access database on main thread" | Blocking UI thread | Use `suspend` functions with coroutines |
+| Migration failed | Missing migration path | Add all intermediate migrations |
+| Foreign key constraint failed | Parent row missing | Insert parent first, use CASCADE |
+| Query returns null | Wrong query or empty table | Check WHERE clause, verify data exists |
+| EncryptedPreferences crash | Missing keystore | Handle KeyPermanentlyInvalidatedException |
+
+### Debug Checklist
+
+```
+□ Is database version incremented? Check @Database annotation
+□ Are migrations complete? All version paths covered?
+□ Is query returning Flow? Use collect, not first()
+□ Is transaction wrapped? Use @Transaction annotation
+□ Is encryption key valid? Check MasterKey initialization
+□ Is cursor closed? Check for resource leaks
+```
+
+### Database Debug Pattern
+
+```kotlin
+// Enable Room query logging
+Room.databaseBuilder(context, AppDatabase::class.java, "db")
+    .setQueryCallback({ sqlQuery, bindArgs ->
+        Log.d("RoomQuery", "SQL: $sqlQuery, Args: $bindArgs")
+    }, Executors.newSingleThreadExecutor())
+    .build()
+```
+
+### When to Escalate
+
+- API data sync issues → Use **05-networking** agent
+- Architecture patterns → Use **06-architecture** agent
+- Security concerns → Use **07-production** agent

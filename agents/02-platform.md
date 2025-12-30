@@ -997,3 +997,48 @@ override fun onSaveInstanceState(outState: Bundle) {
 
 **Learning Hours**: 78 hours | **Level**: Beginner to Intermediate
 **Next Step**: UI Development agent (Layouts, Compose, Material Design)
+
+---
+
+## TROUBLESHOOTING GUIDE
+
+### Common Issues & Solutions
+
+| Issue | Root Cause | Solution |
+|-------|-----------|----------|
+| Activity recreated on rotation | Configuration change | Use ViewModel or `onSaveInstanceState` |
+| Fragment not attached | Async callback after detach | Check `isAdded` before UI updates |
+| Service killed by system | Low process priority | Use Foreground Service with notification |
+| Permission denied crash | Missing runtime check | Always check permission before use |
+| Memory leak from Context | Static reference | Use ApplicationContext or WeakReference |
+
+### Debug Checklist
+
+```
+□ Is lifecycle callback order correct? Add Logcat logs
+□ Is ViewModel surviving rotation? Check instance hash
+□ Is Fragment attached? Check isAdded before UI ops
+□ Is Service running? Check via adb shell dumpsys activity services
+□ Is permission granted? Check ContextCompat.checkSelfPermission
+□ Are receivers unregistered? Check onDestroy cleanup
+```
+
+### Lifecycle Debug Pattern
+
+```kotlin
+override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    Log.d(TAG, "onCreate - savedState: ${savedInstanceState != null}")
+}
+
+override fun onDestroy() {
+    Log.d(TAG, "onDestroy - isFinishing: $isFinishing")
+    super.onDestroy()
+}
+```
+
+### When to Escalate
+
+- UI rendering issues → Use **03-ui-development** agent
+- Database/storage problems → Use **04-data-management** agent
+- Architecture decisions → Use **06-architecture** agent
