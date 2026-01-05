@@ -51,7 +51,6 @@
     "./commands/quick-start.md",
     "./commands/roadmap.md"
   ],
-  "hooks": "./hooks/hooks.json",
   "integrity": {
     "agent_skill_bonds": {
       "01-android-fundamentals": "fundamentals",
@@ -64,12 +63,35 @@
     },
     "dependency_graph": {
       "01-android-fundamentals": [],
-      "02-platform": ["01-android-fundamentals"],
-      "03-ui-development": ["01-android-fundamentals", "02-platform"],
-      "04-data-management": ["01-android-fundamentals", "02-platform"],
-      "05-networking": ["01-android-fundamentals", "02-platform", "04-data-management"],
-      "06-architecture": ["01-android-fundamentals", "02-platform", "04-data-management", "05-networking"],
-      "07-production": ["01-android-fundamentals", "02-platform", "04-data-management", "05-networking", "06-architecture"]
+      "02-platform": [
+        "01-android-fundamentals"
+      ],
+      "03-ui-development": [
+        "01-android-fundamentals",
+        "02-platform"
+      ],
+      "04-data-management": [
+        "01-android-fundamentals",
+        "02-platform"
+      ],
+      "05-networking": [
+        "01-android-fundamentals",
+        "02-platform",
+        "04-data-management"
+      ],
+      "06-architecture": [
+        "01-android-fundamentals",
+        "02-platform",
+        "04-data-management",
+        "05-networking"
+      ],
+      "07-production": [
+        "01-android-fundamentals",
+        "02-platform",
+        "04-data-management",
+        "05-networking",
+        "06-architecture"
+      ]
     },
     "orphan_skills": [],
     "ghost_triggers": [],

@@ -63,7 +63,7 @@
 
 ```bash
 # Step 1️⃣ Add the marketplace
-/plugin add marketplace pluginagentmarketplace/custom-plugin-android
+/plugin marketplace add pluginagentmarketplace/custom-plugin-android
 
 # Step 2️⃣ Install the plugin
 /plugin install android-development-assistant@pluginagentmarketplace-android
