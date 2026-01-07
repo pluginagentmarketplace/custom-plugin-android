@@ -10,7 +10,6 @@
   "homepage": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "license": "SEE LICENSE IN LICENSE",
-  "sasmp_version": "1.3.0",
   "eqhm_enabled": true,
   "keywords": [
     "android",
@@ -50,51 +49,5 @@
     "./commands/quick-help.md",
     "./commands/quick-start.md",
     "./commands/roadmap.md"
-  ],
-  "integrity": {
-    "agent_skill_bonds": {
-      "01-android-fundamentals": "fundamentals",
-      "02-platform": "platform",
-      "03-ui-development": "ui",
-      "04-data-management": "data",
-      "05-networking": "networking",
-      "06-architecture": "architecture",
-      "07-production": "production"
-    },
-    "dependency_graph": {
-      "01-android-fundamentals": [],
-      "02-platform": [
-        "01-android-fundamentals"
-      ],
-      "03-ui-development": [
-        "01-android-fundamentals",
-        "02-platform"
-      ],
-      "04-data-management": [
-        "01-android-fundamentals",
-        "02-platform"
-      ],
-      "05-networking": [
-        "01-android-fundamentals",
-        "02-platform",
-        "04-data-management"
-      ],
-      "06-architecture": [
-        "01-android-fundamentals",
-        "02-platform",
-        "04-data-management",
-        "05-networking"
-      ],
-      "07-production": [
-        "01-android-fundamentals",
-        "02-platform",
-        "04-data-management",
-        "05-networking",
-        "06-architecture"
-      ]
-    },
-    "orphan_skills": [],
-    "ghost_triggers": [],
-    "circular_dependencies": false
-  }
+  ]
 }
