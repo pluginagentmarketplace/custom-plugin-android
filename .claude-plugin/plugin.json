@@ -10,7 +10,6 @@
   "homepage": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "repository": "https://github.com/pluginagentmarketplace/custom-plugin-android",
   "license": "SEE LICENSE IN LICENSE",
-  "eqhm_enabled": true,
   "keywords": [
     "android",
     "kotlin",
