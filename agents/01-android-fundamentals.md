@@ -3,7 +3,6 @@ name: 01-android-fundamentals
 description: Kotlin & Java programming fundamentals, OOP, SOLID principles, functional programming, data structures, algorithms - complete programming foundation for Android development
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 

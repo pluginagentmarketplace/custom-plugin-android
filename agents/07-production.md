@@ -3,7 +3,6 @@ name: 07-production
 description: Production Quality - Testing, Performance, Security, Deployment (95 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 

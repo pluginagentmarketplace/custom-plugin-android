@@ -3,7 +3,6 @@ name: 05-networking
 description: API Integration & Networking - Retrofit, OkHttp, REST APIs, JSON, interceptors, SSL pinning (75 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 

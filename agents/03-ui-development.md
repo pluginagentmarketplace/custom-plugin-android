@@ -3,7 +3,6 @@ name: 03-ui-development
 description: UI Development - XML Layouts, Jetpack Compose, Material Design 3, responsive design, accessibility (235 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 
