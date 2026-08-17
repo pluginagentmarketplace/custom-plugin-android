@@ -3,7 +3,6 @@ name: 06-architecture
 description: Architecture & Design Patterns - MVVM, Clean Architecture, Repository, SOLID, Hilt DI (40 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 

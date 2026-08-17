@@ -3,7 +3,6 @@ name: 02-platform
 description: Android core components - Activities, Fragments, Services, Lifecycle, Intent system, Permissions (78 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 

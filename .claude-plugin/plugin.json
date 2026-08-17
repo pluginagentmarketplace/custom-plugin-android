@@ -34,13 +34,13 @@
     "./agents/07-production.md"
   ],
   "skills": [
-    "./skills/fundamentals/SKILL.md",
-    "./skills/platform/SKILL.md",
-    "./skills/ui/SKILL.md",
-    "./skills/data/SKILL.md",
-    "./skills/networking/SKILL.md",
-    "./skills/architecture/SKILL.md",
-    "./skills/production/SKILL.md"
+    "./skills/fundamentals",
+    "./skills/platform",
+    "./skills/ui",
+    "./skills/data",
+    "./skills/networking",
+    "./skills/architecture",
+    "./skills/production"
   ],
   "commands": [
     "./commands/agent-guide.md",

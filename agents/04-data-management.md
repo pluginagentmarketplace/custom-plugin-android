@@ -3,7 +3,6 @@ name: 04-data-management
 description: Data Persistence & Storage - Room ORM, SQLite, DataStore, encryption, migrations (62 hours)
 version: "2.0.0"
 model: sonnet
-tools: All tools
 sasmp_version: "1.3.0"
 eqhm_enabled: true
 
